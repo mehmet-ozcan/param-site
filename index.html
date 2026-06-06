@@ -13,7 +13,7 @@
             --text-dim: #a0a5b8;
             --text-muted: #6a7088;
             --accent: #6c8cff;
-            --accent-glow: rgba(108,140,255,0.15);
+            --accent-glow: rgba(108,140,255,0.18);
             --border: #252a3a;
             --font-size: 17px;
         }
@@ -29,12 +29,12 @@
         .header {
             background: linear-gradient(135deg, #111420 0%, #0c0e14 100%);
             border-bottom: 1px solid var(--border);
-            padding: 40px 0 32px;
+            padding: 36px 0 28px;
         }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
         .header h1 { font-size: 32px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
         .header .subtitle { color: var(--text-dim); font-size: 16px; }
-        .header-meta { margin-top: 16px; display: flex; gap: 20px; align-items: center; }
+        .header-meta { margin-top: 14px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
         .header-meta .stat { display: flex; align-items: center; gap: 6px; color: var(--text-muted); font-size: 14px; }
         .header-meta .stat strong { color: var(--accent); font-size: 18px; }
         .controls { display: flex; gap: 8px; margin-left: auto; }
@@ -44,55 +44,177 @@
             display: flex; align-items: center; justify-content: center; transition: all 0.2s;
         }
         .controls button:hover { background: var(--bg-card-hover); color: var(--text); }
+
+        .section-title {
+            font-size: 22px; font-weight: 700; margin: 36px 0 18px;
+            color: var(--text); display: flex; align-items: center; gap: 12px;
+        }
+        .section-title::before {
+            content: ""; width: 4px; height: 22px;
+            background: var(--accent); border-radius: 2px;
+        }
+
+        /* HERO */
+        .hero {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 18px;
+            margin-bottom: 12px;
+        }
+        .hero-main, .hero-side-card {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+            overflow: hidden; cursor: pointer; transition: all 0.25s; position: relative;
+        }
+        .hero-main:hover, .hero-side-card:hover {
+            border-color: var(--accent); transform: translateY(-2px);
+            box-shadow: 0 0 28px var(--accent-glow);
+        }
+        .hero-main {
+            grid-row: span 2;
+            display: flex; flex-direction: column;
+        }
+        .hero-main-img {
+            width: 100%; height: 360px; object-fit: cover;
+            border-bottom: 1px solid var(--border);
+        }
+        .hero-main-img-placeholder {
+            width: 100%; height: 360px;
+            background: linear-gradient(135deg, #1a1f2e, #252b3d);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-muted); font-size: 64px;
+        }
+        .hero-main-body { padding: 24px; }
+        .hero-main h2 {
+            font-size: 26px; font-weight: 800; line-height: 1.3;
+            margin-bottom: 12px;
+        }
+        .hero-main .excerpt {
+            color: var(--text-dim); font-size: 16px; line-height: 1.7;
+        }
+        .hero-side {
+            display: flex; flex-direction: column; gap: 18px;
+        }
+        .hero-side-card {
+            display: grid; grid-template-columns: 140px 1fr;
+            height: 100%;
+        }
+        .hero-side-img {
+            width: 100%; height: 100%; object-fit: cover;
+            border-right: 1px solid var(--border);
+        }
+        .hero-side-img-placeholder {
+            background: linear-gradient(135deg, #1a1f2e, #252b3d);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-muted); font-size: 32px;
+        }
+        .hero-side-body { padding: 16px; display: flex; flex-direction: column; justify-content: center; }
+        .hero-side-card h3 { font-size: 17px; font-weight: 700; line-height: 1.4; margin-bottom: 6px; }
+
+        .badge {
+            background: var(--accent); color: white;
+            padding: 3px 10px; border-radius: 6px;
+            font-size: 11px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            display: inline-block;
+        }
+        .meta-row {
+            display: flex; align-items: center; gap: 8px;
+            margin-bottom: 8px; flex-wrap: wrap;
+        }
+        .meta-date { color: var(--text-muted); font-size: 12px; }
+
+        /* GRID */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 22px;
-            padding: 32px 0 60px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+            padding-bottom: 60px;
         }
         .card {
-            background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
-            overflow: hidden; transition: all 0.25s ease; display: flex; flex-direction: column;
-            text-decoration: none; color: inherit;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+            overflow: hidden; cursor: pointer; transition: all 0.25s;
+            display: flex; flex-direction: column;
         }
         .card:hover {
             background: var(--bg-card-hover); border-color: var(--accent);
             box-shadow: 0 0 24px var(--accent-glow); transform: translateY(-2px);
         }
-        .card-img {
-            width: 100%; height: 200px; object-fit: cover;
-            border-bottom: 1px solid var(--border);
-        }
+        .card-img { width: 100%; height: 170px; object-fit: cover; border-bottom: 1px solid var(--border); }
         .card-img-placeholder {
-            width: 100%; height: 200px;
-            background: linear-gradient(135deg, #1a1f2e 0%, #252b3d 100%);
+            width: 100%; height: 170px;
+            background: linear-gradient(135deg, #1a1f2e, #252b3d);
             display: flex; align-items: center; justify-content: center;
+            color: var(--text-muted); font-size: 36px;
             border-bottom: 1px solid var(--border);
-            color: var(--text-muted); font-size: 40px;
         }
-        .card-body { padding: 20px 22px 22px; display: flex; flex-direction: column; flex: 1; }
-        .card-source { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px; }
-        .badge {
-            background: var(--accent); color: white; padding: 3px 10px; border-radius: 6px;
-            font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+        .card-body { padding: 18px; display: flex; flex-direction: column; flex: 1; }
+        .card h3 {
+            font-size: 17px; font-weight: 700; line-height: 1.4;
+            margin: 8px 0 10px;
         }
-        .card-date { color: var(--text-muted); font-size: 13px; }
-        .card h2 { font-size: 19px; font-weight: 700; line-height: 1.4; margin-bottom: 10px; color: var(--text); }
-        .card p { color: var(--text-dim); font-size: 15px; line-height: 1.7; flex: 1; }
-        .card-footer {
-            margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border);
-            display: flex; justify-content: space-between; align-items: center;
+        .card .excerpt {
+            color: var(--text-dim); font-size: 14px; line-height: 1.6;
+            flex: 1;
         }
-        .read-more { color: var(--accent); font-size: 14px; font-weight: 600; }
+        .read-more {
+            display: inline-block; color: var(--accent);
+            font-weight: 600; font-size: 14px;
+            margin-top: 12px;
+        }
+
+        /* MODAL */
+        .modal-overlay {
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,0.75);
+            display: none;
+            align-items: center; justify-content: center;
+            padding: 20px; z-index: 100;
+            animation: fadeIn 0.2s;
+        }
+        .modal-overlay.open { display: flex; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .modal {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            max-width: 720px; width: 100%;
+            max-height: 90vh; overflow-y: auto;
+            position: relative;
+        }
+        .modal-close {
+            position: absolute; top: 14px; right: 14px;
+            background: rgba(0,0,0,0.4); color: white;
+            border: none; width: 36px; height: 36px;
+            border-radius: 50%; cursor: pointer; font-size: 18px;
+            z-index: 2;
+        }
+        .modal-close:hover { background: var(--accent); }
+        .modal-img { width: 100%; max-height: 360px; object-fit: cover; border-bottom: 1px solid var(--border); }
+        .modal-body { padding: 28px; }
+        .modal h2 { font-size: 26px; font-weight: 800; line-height: 1.3; margin: 12px 0 16px; }
+        .modal-summary { color: var(--text); font-size: 16px; line-height: 1.8; margin-bottom: 22px; }
+        .modal-source {
+            display: inline-block; background: var(--accent); color: white;
+            padding: 10px 18px; border-radius: 8px;
+            text-decoration: none; font-weight: 600;
+        }
+        .modal-source:hover { opacity: 0.9; }
+
         .footer {
             border-top: 1px solid var(--border); padding: 28px 0;
             text-align: center; color: var(--text-muted); font-size: 14px;
         }
-        .footer a { color: var(--accent); text-decoration: none; }
-        @media (max-width: 720px) {
-            .grid { grid-template-columns: 1fr; }
+
+        @media (max-width: 880px) {
+            .hero { grid-template-columns: 1fr; }
+            .hero-main { grid-row: auto; }
+            .hero-main-img, .hero-main-img-placeholder { height: 240px; }
+            .hero-main h2 { font-size: 22px; }
             .header h1 { font-size: 24px; }
-            .header-meta { flex-wrap: wrap; }
+        }
+        @media (max-width: 540px) {
+            .hero-side-card { grid-template-columns: 110px 1fr; }
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -102,142 +224,244 @@
             <h1>Para Politikasi Haberleri</h1>
             <p class="subtitle">Para politikasi haberleri</p>
             <div class="header-meta">
-                <div class="stat"><strong>6</strong> haber</div>
-                <div class="stat">Son guncelleme: <strong>07.06.2026 02:31</strong></div>
+                <div class="stat"><strong>10</strong> haber</div>
+                <div class="stat">Son guncelleme: <strong>07.06.2026 02:42</strong></div>
                 <div class="controls">
-                    <button onclick="changeFontSize(-1)" title="Kucultu">A-</button>
-                    <button onclick="changeFontSize(1)" title="Buyutu">A+</button>
+                    <button onclick="changeFontSize(-1)" title="Kucult">A-</button>
+                    <button onclick="changeFontSize(1)" title="Buyut">A+</button>
                 </div>
             </div>
         </div>
     </header>
+
     <main class="container">
+        
+        <h2 class="section-title">Manşet</h2>
+        <div class="hero">
+            <article class="hero-main" data-id="0" onclick="openModal(0)">
+                
+                <img class="hero-main-img" src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/ad2900d4-3049-4a92-ac7b-8c591b8f706c/TheBreakdown_BrandPage.jpg?t=1747365455" alt=""
+                     onerror="this.outerHTML='<div class=hero-main-img-placeholder>&#128240;</div>'">
+                
+                <div class="hero-main-body">
+                    <div class="meta-row">
+                        <span class="badge">Blockworks.com</span>
+                        <span class="meta-date">07.06.2026</span>
+                    </div>
+                    <h2>Kağıt Para ve Ekonomik Altyapı: Amerika'nın Kuruluşunun Sır Perdesi</h2>
+                    <p class="excerpt">Bu makale, modern ekonomik büyümenin temel itici gücünün, geleneksel altın standartlarından ayrılmış 'nominal' veya 'kağıt para' (fiat) sistemi olduğunu savunmaktadır. Temel tez, Amerika Birleşik Devletleri'nin günümüzdeki devasa ekonomik ve altyapısal büyümesinin, fiziksel bir emtiaya değil, merkezi bankacılık sistemi tarafından yaratılan borç ve güven mekanizmasına dayandığıdır. Makale, ticari bankacılık sisteminin nasıl çalıştığını, yani bankaların mevduatlar üzerine borçlanarak para yaratması sürecini detaylandırmaktadır. Ana aktör olarak Federal Rezerv ve merkezi hükümet vurgulanarak, para arzının sürekli genişletilmesi yoluyla ekonomik krizlerin finanse edildiği anlatılmaktadır. Bu durum, para politikasının sadece bir düzenleyici görev olmanın ötesinde, ülkenin varlığını ve yapısal büyümesini mümkün kılan bir varoluş hikayesi olduğu sonucunu doğurmaktadır.</p>
+                </div>
+            </article>
+
+            <div class="hero-side">
+                
+                <article class="hero-side-card" data-id="1" onclick="openModal(1)">
+                    
+                    <img class="hero-side-img" src="https://s.yimg.com/ny/api/res/1.2/4dy9LWGqR1_dVwpju.hXVQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://media.zenfs.com/en/bloomberg_holding_pen_162/9091bb7f48ce9e088fff9765b36e8160" alt=""
+                         onerror="this.outerHTML='<div class=hero-side-img-placeholder>&#128240;</div>'">
+                    
+                    <div class="hero-side-body">
+                        <div class="meta-row">
+                            <span class="badge">Yahoo Entertainment</span>
+                        </div>
+                        <h3>Fed Yetkilisinden Faiz Artışı Uyarısı: Altın Fiyatları Düşüş Eğiliminde</h3>
+                        <span class="meta-date">07.06.2026</span>
+                    </div>
+                </article>
+                
+                <article class="hero-side-card" data-id="2" onclick="openModal(2)">
+                    
+                    <img class="hero-side-img" src="https://img.pastemagazine.com/wp-content/juploads/2026/05/main-President_Ronald_Reagan_during_a_bipartisan_congressional_meeting-with-Dick-Cheney.jpg" alt=""
+                         onerror="this.outerHTML='<div class=hero-side-img-placeholder>&#128240;</div>'">
+                    
+                    <div class="hero-side-body">
+                        <div class="meta-row">
+                            <span class="badge">Jezebel</span>
+                        </div>
+                        <h3>Ulusal Borç Alarmı: Neden Endişelenmek Zorundayız?</h3>
+                        <span class="meta-date">07.06.2026</span>
+                    </div>
+                </article>
+                
+                <article class="hero-side-card" data-id="3" onclick="openModal(3)">
+                    
+                    <img class="hero-side-img" src="https://s.yimg.com/os/en/thestreet_881/75aca69930b53f8622657dce8e8d16ad" alt=""
+                         onerror="this.outerHTML='<div class=hero-side-img-placeholder>&#128240;</div>'">
+                    
+                    <div class="hero-side-body">
+                        <div class="meta-row">
+                            <span class="badge">TheStreet</span>
+                        </div>
+                        <h3>Morgan Stanley'den Şaşırtıcı Tahmin: Fed, Faiz İndirim Yol Haritasını 2027 İçin Revize Ediyor</h3>
+                        <span class="meta-date">07.06.2026</span>
+                    </div>
+                </article>
+                
+            </div>
+        </div>
+        
+
+        
+        <h2 class="section-title">Tüm Haberler</h2>
         <div class="grid">
             
-            <a href="https://indianexpress.com/article/explained/explained-economics/rbi-repo-rate-unchanged-growth-forecast-cut-inflation-outlook-raised-10725059/" target="_blank" rel="noopener" class="card">
+            <article class="card" data-id="4" onclick="openModal(4)">
                 
-                <img class="card-img" src="https://images.indianexpress.com/2026/06/Ch2006538.jpg" alt="Artan Enflasyon Risklerine Rağmen RBI Neden Faizleri Sabitledi? Para Politikasının Gizemi" loading="lazy"
+                <img class="card-img" src="https://i.cbc.ca/ais/f5b79c47-f4d2-47ca-806e-369564c146b2,1778699660283/full/max/0/default.jpg?im=Crop%2Crect%3D%280%2C312%2C6000%2C3375%29%3BResize%3D620" alt=""
                      onerror="this.outerHTML='<div class=card-img-placeholder>&#128240;</div>'">
                 
                 <div class="card-body">
-                    <div class="card-source">
+                    <div class="meta-row">
+                        <span class="badge">CBC News</span>
+                        <span class="meta-date">07.06.2026</span>
+                    </div>
+                    <h3>Kritik Merkez Bankası Ataması: ABD Senatosu, Trump'ın FED Başkanı Adayını Onayladı</h3>
+                    <p class="excerpt">Bu haber, Amerikan ekonomisinin en kritik kurumlarından biri olan Federal Rezerv (FED) Başkanı pozisyonuna yapılan atamayla ilgili önemli bir gelişmeyi aktarıyor. Senato'nun, Donald Trump tarafından önerilen aday üzerinde oy kullanarak onay verdiğini gösteriyor. FED Başkanı, ABD para politikalarının belirleyicisi olduğu için, bu atama sadece bir idari karar olmanın ötesinde, küresel finans piyasaları ve ABD enflasyonu üzerinde doğrudan etkiler yaratma potansiyeli taşıyor. Bu tür politik atamalar genellikle siyasi gerilime yol açar ve piyasa beklentileri ile hükümet yetkileri arasındaki gerilimi artırır. Analistler, yeni başkanın ekonomik duruşunun, faiz politikalarını ve faiz beklentilerini ne kadar süreyle etkileyeceğini yakından izliyor.</p>
+                    
+                </div>
+            </article>
+            
+            <article class="card" data-id="5" onclick="openModal(5)">
+                
+                <img class="card-img" src="https://images.indianexpress.com/2026/06/Ch2006538.jpg" alt=""
+                     onerror="this.outerHTML='<div class=card-img-placeholder>&#128240;</div>'">
+                
+                <div class="card-body">
+                    <div class="meta-row">
                         <span class="badge">The Indian Express</span>
-                        <span class="card-date">07.06.2026</span>
+                        <span class="meta-date">07.06.2026</span>
                     </div>
-                    <h2>Artan Enflasyon Risklerine Rağmen RBI Neden Faizleri Sabitledi? Para Politikasının Gizemi</h2>
-                    <p>Bu haber, Hindistan Rezervi Bankası'nın (RBI) enflasyon riskleri yükselmesine rağmen faiz oranlarını sabit tutma kararını mercek altına alıyor. Merkez bankasının bu kararı, ekonomideki büyüme beklentileri ile fiyat istikrarı hedefleri arasındaki hassas dengeyi gözler önüne seriyor. Genellikle yüksek enflasyon baskısı, faiz artırımı gerektirirken, RBI'ın 'bekle ve gör' tutumu, piyasaların dikkatinin anlık fiyat artışlarından ziyade, uzun vadeli ekonomik büyüme potansiyeli ve sektörlerin toparlanma eğrisinde olduğuna odaklandığını gösteriyor. Bu stratejik kararın amacı, finansal piyasalara şok etkisi yapmadan, piyasaların bir miktar nefes almasına izin vererek sermaye akışını teşvik etmek olabilir. Ancak bu sabitleme, piyasalar arasında hem rahatlama hem de endişe yarattı; çünkü enflasyon dinamiklerinin tam olarak çözülmediği bir dönemde faizlerin sabit kalması, gelecekte olası bir faiz artırım beklentisini sürdürmektedir.</p>
-                    <div class="card-footer">
-                        <span class="read-more">Kaynaga git &rarr;</span>
-                    </div>
+                    <h3>Artan Enflasyon Risklerine Rağmen RBI Neden Faizleri Sabitledi? Para Politikasının Gizemi</h3>
+                    <p class="excerpt">Bu haber, Hindistan Rezervi Bankası'nın (RBI) enflasyon riskleri yükselmesine rağmen faiz oranlarını sabit tutma kararını mercek altına alıyor. Merkez bankasının bu kararı, ekonomideki büyüme beklentileri ile fiyat istikrarı hedefleri arasındaki hassas dengeyi gözler önüne seriyor. Genellikle yüksek enflasyon baskısı, faiz artırımı gerektirirken, RBI'ın 'bekle ve gör' tutumu, piyasaların dikkatinin anlık fiyat artışlarından ziyade, uzun vadeli ekonomik büyüme potansiyeli ve sektörlerin toparlanma eğrisinde olduğuna odaklandığını gösteriyor. Bu stratejik kararın amacı, finansal piyasalara şok etkisi yapmadan, piyasaların bir miktar nefes almasına izin vererek sermaye akışını teşvik etmek olabilir. Ancak bu sabitleme, piyasalar arasında hem rahatlama hem de endişe yarattı; çünkü enflasyon dinamiklerinin tam olarak çözülmediği bir dönemde faizlerin sabit kalması, gelecekte olası bir faiz artırım beklentisini sürdürmektedir.</p>
+                    
                 </div>
-            </a>
+            </article>
             
-            <a href="https://www.aljazeera.com/opinions/2026/5/21/the-crises-caused-by-the-iran-war-will-hit-the-world-in-four-waves" target="_blank" rel="noopener" class="card">
+            <article class="card" data-id="6" onclick="openModal(6)">
                 
-                <img class="card-img" src="https://www.aljazeera.com/wp-content/uploads/2026/03/reuters_69bd21ae-1774002606.jpg?resize=1920%2C1369" alt="Iran'dan Kaynaklanan Kriz: Dünya Ekonomisi Dört Dalga Şok Yaşayacak" loading="lazy"
+                <img class="card-img" src="https://www.aljazeera.com/wp-content/uploads/2026/03/reuters_69bd21ae-1774002606.jpg?resize=1920%2C1369" alt=""
                      onerror="this.outerHTML='<div class=card-img-placeholder>&#128240;</div>'">
                 
                 <div class="card-body">
-                    <div class="card-source">
+                    <div class="meta-row">
                         <span class="badge">Al Jazeera English</span>
-                        <span class="card-date">07.06.2026</span>
+                        <span class="meta-date">07.06.2026</span>
                     </div>
-                    <h2>Iran'dan Kaynaklanan Kriz: Dünya Ekonomisi Dört Dalga Şok Yaşayacak</h2>
-                    <p>Uzmanlar, İran'dan kaynaklanan bölgesel gerilimlerin sadece jeopolitik bir çatışma olmaktan öte, küresel ekonomiye sistemik bir şok dalgası olarak yansıyacağını belirtiyor. Bu krizin tek bir olayla patlamak yerine, tedarik zinciri aksamaları, enerji fiyat volatilitesi ve yaptırımlar gibi çeşitli ekonomik etkenlerle birlikte dört aşamalı bir seyir izlemesi bekleniyor. Ana aktörler arasında petrol piyasaları, küresel enerji geçiş mekanizmaları ve uluslararası finans kurumları yer alırken, olası etkiler özellikle enflasyon artışı, maliyet şokları ve gelişmekte olan pazarlar için ciddi büyüme yavaşlamaları şeklinde kendini gösterecek. Bu durum, merkez bankalarını geleneksel para politikalarının sınırlarını zorlayan, hem faiz ayarlaması hem de değer zinciri yeniden yapılanması gerektiren kritik kararlar almaya itiyor. Dolayısıyla, bu krizin potansiyel etkileri, sadece petrokimya veya bölgesel ticaretle sınırlı kalmayıp, tüm dünya ticaretini ve para politikası dengesini yeniden tanımlayacak derin bir bağlam oluşturmaktadır.</p>
-                    <div class="card-footer">
-                        <span class="read-more">Kaynaga git &rarr;</span>
-                    </div>
+                    <h3>Iran'dan Kaynaklanan Kriz: Dünya Ekonomisi Dört Dalga Şok Yaşayacak</h3>
+                    <p class="excerpt">Uzmanlar, İran'dan kaynaklanan bölgesel gerilimlerin sadece jeopolitik bir çatışma olmaktan öte, küresel ekonomiye sistemik bir şok dalgası olarak yansıyacağını belirtiyor. Bu krizin tek bir olayla patlamak yerine, tedarik zinciri aksamaları, enerji fiyat volatilitesi ve yaptırımlar gibi çeşitli ekonomik etkenlerle birlikte dört aşamalı bir seyir izlemesi bekleniyor. Ana aktörler arasında petrol piyasaları, küresel enerji geçiş mekanizmaları ve uluslararası finans kurumları yer alırken, olası etkiler özellikle enflasyon artışı, maliyet şokları ve gelişmekte olan pazarlar için ciddi büyüme yavaşlamaları şeklinde kendini gösterecek. Bu durum, merkez bankalarını geleneksel para politikalarının sınırlarını zorlayan, hem faiz ayarlaması hem de değer zinciri yeniden yapılanması gerektiren kritik kararlar almaya itiyor. Dolayısıyla, bu krizin potansiyel etkileri, sadece petrokimya veya bölgesel ticaretle sınırlı kalmayıp, tüm dünya ticaretini ve para politikası dengesini yeniden tanımlayacak derin bir bağlam oluşturmaktadır.</p>
+                    
                 </div>
-            </a>
+            </article>
             
-            <a href="https://economictimes.indiatimes.com/industry/banking/finance/banking/rbi-says-fully-prepared-to-tackle-mythos-cyber-threat-advisories-issued-to-banks/articleshow/131532592.cms" target="_blank" rel="noopener" class="card">
+            <article class="card" data-id="7" onclick="openModal(7)">
                 
-                <img class="card-img" src="https://img.etimg.com/thumb/msid-131532663,width-1200,height-630,imgsize-135954,overlay-economictimes/articleshow.jpg" alt="Hindistan Merkez Bankası'ndan (RBI) Kritik Uyarı: 'Mythos' Siber Tehdidiyle Mücadelede Tam Hazırlık" loading="lazy"
+                <img class="card-img" src="https://img.etimg.com/thumb/msid-131532663,width-1200,height-630,imgsize-135954,overlay-economictimes/articleshow.jpg" alt=""
                      onerror="this.outerHTML='<div class=card-img-placeholder>&#128240;</div>'">
                 
                 <div class="card-body">
-                    <div class="card-source">
+                    <div class="meta-row">
                         <span class="badge">The Times of India</span>
-                        <span class="card-date">07.06.2026</span>
+                        <span class="meta-date">07.06.2026</span>
                     </div>
-                    <h2>Hindistan Merkez Bankası'ndan (RBI) Kritik Uyarı: 'Mythos' Siber Tehdidiyle Mücadelede Tam Hazırlık</h2>
-                    <p>Endişe verici bir siber risk olan 'Mythos' tehdidine karşı hazırlıklı olduklarını açıklayan Hint Rezerv Bankası (RBI), finansal sistemi koruma adına önemli adımlar attı. Bankaların sisteme entegre olabileceği potansiyel riskleri ele alan RBI, sektördeki tüm bankalara detaylı uyarılar yayınladı. Bu tehdit, bankacılık altyapısının güvenliğine yönelik önemli bir zafiyeti işaret ediyor ve finansal kurumların Siber Güvenlik Yönetişimi (Cyber Governance) standartlarını yeniden gözden geçirmesini zorunlu kılıyor. RBI'nın bu açıklamasının, yalnızca bir teknik uyarı olmanın ötesinde, Hindistan'ın genişleyen ve kritik önem taşıyan bankacılık sektörünün istikrarını koruma misyonunun bir parçası olduğu anlaşılmaktadır. Bu gelişme, uluslararası finans ve siber güvenlik alanındaki paydaşlar için sektör risk analizi açısından yüksek bir öneme sahiptir.</p>
-                    <div class="card-footer">
-                        <span class="read-more">Kaynaga git &rarr;</span>
-                    </div>
+                    <h3>Hindistan Merkez Bankası'ndan (RBI) Kritik Uyarı: 'Mythos' Siber Tehdidiyle Mücadelede Tam Hazırlık</h3>
+                    <p class="excerpt">Endişe verici bir siber risk olan 'Mythos' tehdidine karşı hazırlıklı olduklarını açıklayan Hint Rezerv Bankası (RBI), finansal sistemi koruma adına önemli adımlar attı. Bankaların sisteme entegre olabileceği potansiyel riskleri ele alan RBI, sektördeki tüm bankalara detaylı uyarılar yayınladı. Bu tehdit, bankacılık altyapısının güvenliğine yönelik önemli bir zafiyeti işaret ediyor ve finansal kurumların Siber Güvenlik Yönetişimi (Cyber Governance) standartlarını yeniden gözden geçirmesini zorunlu kılıyor. RBI'nın bu açıklamasının, yalnızca bir teknik uyarı olmanın ötesinde, Hindistan'ın genişleyen ve kritik önem taşıyan bankacılık sektörünün istikrarını koruma misyonunun bir parçası olduğu anlaşılmaktadır. Bu gelişme, uluslararası finans ve siber güvenlik alanındaki paydaşlar için sektör risk analizi açısından yüksek bir öneme sahiptir.</p>
+                    
                 </div>
-            </a>
+            </article>
             
-            <a href="https://www.ibtimes.com.au/dow-jones-dips-after-record-high-1870183" target="_blank" rel="noopener" class="card">
+            <article class="card" data-id="8" onclick="openModal(8)">
                 
-                <img class="card-img" src="https://d.ibtimes.com.au/en/full/1893186/ftse-100-surges-08-today-oil-eases-markets.jpg" alt="Rekorlar Sindiriliyor: Yatırımcılar Kritik Veri Beklerken Dow Jones Hafif Düşüş Yaşadı" loading="lazy"
+                <img class="card-img" src="https://d.ibtimes.com.au/en/full/1893186/ftse-100-surges-08-today-oil-eases-markets.jpg" alt=""
                      onerror="this.outerHTML='<div class=card-img-placeholder>&#128240;</div>'">
                 
                 <div class="card-body">
-                    <div class="card-source">
+                    <div class="meta-row">
                         <span class="badge">Ibtimes.com.au</span>
-                        <span class="card-date">07.06.2026</span>
+                        <span class="meta-date">07.06.2026</span>
                     </div>
-                    <h2>Rekorlar Sindiriliyor: Yatırımcılar Kritik Veri Beklerken Dow Jones Hafif Düşüş Yaşadı</h2>
-                    <p>Borsa endeksleri, yatırımcıların önceki dönemdeki rekor yükselişleri sindirme sürecinde konsantre bir hareket sergiledi. 5 Haziran tarihinde Dow Jones endeksi, büyük artışların ardından hafif bir düşüş yaşayarak yatırımcıların dikkatini gelecek ekonomik verilere çekti. Piyasaların temel dinamiği, şimdiye kadarki yüksek performans yerine, Merkez Bankaları'nın (CB) politika yapımını etkileyecek kritik makroekonomik verileri beklemektir. Bu tür bekleyiş dönemleri genellikle piyasada bir temkinli satış dalgasına yol açarak, yatırımcıların risk iştahını geçici olarak düşürür. Dolayısıyla düşüş, panik satıştan ziyade, bir sonraki politika sinyaline geçici bir duraklama ve odaklanma olduğunu gösteriyor. Bu durum, yatırımcıların sadece mevcut fiyat hareketine değil, gelecekteki faiz kararları ve enflasyon beklentilerine odaklanmasının önemini vurguluyor.</p>
-                    <div class="card-footer">
-                        <span class="read-more">Kaynaga git &rarr;</span>
-                    </div>
+                    <h3>Rekorlar Sindiriliyor: Yatırımcılar Kritik Veri Beklerken Dow Jones Hafif Düşüş Yaşadı</h3>
+                    <p class="excerpt">Borsa endeksleri, yatırımcıların önceki dönemdeki rekor yükselişleri sindirme sürecinde konsantre bir hareket sergiledi. 5 Haziran tarihinde Dow Jones endeksi, büyük artışların ardından hafif bir düşüş yaşayarak yatırımcıların dikkatini gelecek ekonomik verilere çekti. Piyasaların temel dinamiği, şimdiye kadarki yüksek performans yerine, Merkez Bankaları'nın (CB) politika yapımını etkileyecek kritik makroekonomik verileri beklemektir. Bu tür bekleyiş dönemleri genellikle piyasada bir temkinli satış dalgasına yol açarak, yatırımcıların risk iştahını geçici olarak düşürür. Dolayısıyla düşüş, panik satıştan ziyade, bir sonraki politika sinyaline geçici bir duraklama ve odaklanma olduğunu gösteriyor.</p>
+                    <span class="read-more">Devamını oku →</span>
                 </div>
-            </a>
+            </article>
             
-            <a href="https://finance.yahoo.com/news/feds-bowman-says-extended-energy-130013396.html" target="_blank" rel="noopener" class="card">
+            <article class="card" data-id="9" onclick="openModal(9)">
                 
-                <img class="card-img" src="https://s.yimg.com/os/en/reuters.com/9bb9326e86e2cec115dc78e853748f2f" alt="Fed'den Kritik Uyarı: Bowman, Uzayan Enerji Şokunun Para Politikası Görünümünü Değiştirebileceğini Dedi" loading="lazy"
+                <img class="card-img" src="https://s.yimg.com/os/en/reuters.com/9bb9326e86e2cec115dc78e853748f2f" alt=""
                      onerror="this.outerHTML='<div class=card-img-placeholder>&#128240;</div>'">
                 
                 <div class="card-body">
-                    <div class="card-source">
+                    <div class="meta-row">
                         <span class="badge">Yahoo Entertainment</span>
-                        <span class="card-date">07.06.2026</span>
+                        <span class="meta-date">07.06.2026</span>
                     </div>
-                    <h2>Fed'den Kritik Uyarı: Bowman, Uzayan Enerji Şokunun Para Politikası Görünümünü Değiştirebileceğini Dedi</h2>
-                    <p>Federal Rezerv (Fed) yetkililerinden Bowman, küresel ölçekte süregelen ve uzayan enerji şoklarının para politikası beklentilerinde ciddi bir değişim yaratabileceği uyarısında bulundu. Bowman'a göre, enerji fiyatlarındaki belirsizlik, enflasyon baskısının sadece iç talepten değil, dış tedarik şoklarından kaynaklandığını gösteriyor. Bu durum, Fed'in şu anki para sıkılaştırma döngüsünün hesapladığı risk modelini bozma potansiyeli taşıyor. Eğer enerji fiyatları yüksek kalmaya devam ederse, Fed'in faiz artırımlarına ilişkin görüşlerinin revize edilmesi veya politika duruşunun tamamen gözden geçirilmesi gerekebilir. Bu nedenle, yatırımcılar ve ekonomi çevreleri için enerji fiyatlarının seyri ve bu kaynakların enflasyon üzerindeki etkisi, önümüzdeki faiz kararları açısından kritik bir gösterge olarak öne çıkmaktadır.</p>
-                    <div class="card-footer">
-                        <span class="read-more">Kaynaga git &rarr;</span>
-                    </div>
+                    <h3>Fed'den Kritik Uyarı: Bowman, Uzayan Enerji Şokunun Para Politikası Görünümünü Değiştirebileceğini Dedi</h3>
+                    <p class="excerpt">Federal Rezerv (Fed) yetkililerinden Bowman, küresel ölçekte süregelen ve uzayan enerji şoklarının para politikası beklentilerinde ciddi bir değişim yaratabileceği uyarısında bulundu. Bowman'a göre, enerji fiyatlarındaki belirsizlik, enflasyon baskısının sadece iç talepten değil, dış tedarik şoklarından kaynaklandığını gösteriyor. Bu durum, Fed'in şu anki para sıkılaştırma döngüsünün hesapladığı risk modelini bozma potansiyeli taşıyor. Eğer enerji fiyatları yüksek kalmaya devam ederse, Fed'in faiz artırımlarına ilişkin görüşlerinin revize edilmesi veya politika duruşunun tamamen gözden geçirilmesi gerekebilir. Bu nedenle, yatırımcılar ve ekonomi çevreleri için enerji fiyatlarının seyri ve bu kaynakların enflasyon üzerindeki etkisi, önümüzdeki faiz kararları açısından kritik bir gösterge olarak öne çıkmaktadır.</p>
+                    
                 </div>
-            </a>
-            
-            <a href="https://finance.yahoo.com/news/warsh-wins-confirmation-fed-chair-185050168.html" target="_blank" rel="noopener" class="card">
-                
-                <img class="card-img" src="https://s.yimg.com/os/en/reuters.com/be378585eefe9c8095d28ca97d4711c2" alt="Fed Başkanı Onaylandı: Yükselen Enflasyon Endişeleri Global Para Politikalarını Belirleyecek" loading="lazy"
-                     onerror="this.outerHTML='<div class=card-img-placeholder>&#128240;</div>'">
-                
-                <div class="card-body">
-                    <div class="card-source">
-                        <span class="badge">Yahoo Entertainment</span>
-                        <span class="card-date">07.06.2026</span>
-                    </div>
-                    <h2>Fed Başkanı Onaylandı: Yükselen Enflasyon Endişeleri Global Para Politikalarını Belirleyecek</h2>
-                    <p>ABD Merkez Bankası (Fed) Başkanı'na verilen onay, küresel finans çevreleri için kritik bir döneme işaret ediyor. Bu atama, özellikle tırmanışta olan enflasyon riski nedeniyle yüksek bir gözle izleniyor. Yeni başkanın göreve başlamasıyla birlikte beklenti, yüksek enflasyonu kontrol altına alacak ve ekonomiyi stabilize edecek bir para politikası yönelimi belirlemek üzerinde yoğunlaşıyor. Piyasalar, başkanın enflasyonla mücadelede agresif bir ton benimseyip benimsemeyeceğini yakından takip ediyor. Eğer Fed, enflasyonu ciddiye alarak faiz artırımları sinyali verirse, bu durum küresel likidite akışlarını daraltarak gelişmekte olan piyasalar üzerinde baskı yaratabilir. Bu nedenle, yeni başkanın söylemleri sadece bir atamayı değil, aynı zamanda küresel ekonomik yörüngenin geleceğini de belirliyor.</p>
-                    <div class="card-footer">
-                        <span class="read-more">Kaynaga git &rarr;</span>
-                    </div>
-                </div>
-            </a>
+            </article>
             
         </div>
+        
     </main>
+
+    <div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="container">
             Yenisey ile olusturuldu &middot; Icerikler kaynaklarindan derlenmekte ve Turkce'ye cevrilmektedir
         </div>
     </footer>
+
     <script>
+        var ARTICLES = [{"id": 0, "title_tr": "Kağıt Para ve Ekonomik Altyapı: Amerika'nın Kuruluşunun Sır Perdesi", "summary_tr": "Bu makale, modern ekonomik büyümenin temel itici gücünün, geleneksel altın standartlarından ayrılmış 'nominal' veya 'kağıt para' (fiat) sistemi olduğunu savunmaktadır. Temel tez, Amerika Birleşik Devletleri'nin günümüzdeki devasa ekonomik ve altyapısal büyümesinin, fiziksel bir emtiaya değil, merkezi bankacılık sistemi tarafından yaratılan borç ve güven mekanizmasına dayandığıdır. Makale, ticari bankacılık sisteminin nasıl çalıştığını, yani bankaların mevduatlar üzerine borçlanarak para yaratması sürecini detaylandırmaktadır. Ana aktör olarak Federal Rezerv ve merkezi hükümet vurgulanarak, para arzının sürekli genişletilmesi yoluyla ekonomik krizlerin finanse edildiği anlatılmaktadır. Bu durum, para politikasının sadece bir düzenleyici görev olmanın ötesinde, ülkenin varlığını ve yapısal büyümesini mümkün kılan bir varoluş hikayesi olduğu sonucunu doğurmaktadır.", "excerpt": "Bu makale, modern ekonomik büyümenin temel itici gücünün, geleneksel altın standartlarından ayrılmış 'nominal' veya 'kağıt para' (fiat) sistemi olduğunu savunmaktadır. Temel tez, Amerika Birleşik Devletleri'nin günümüzdeki devasa ekonomik ve altyapısal büyümesinin, fiziksel bir emtiaya değil, merkezi bankacılık sistemi tarafından yaratılan borç ve güven mekanizmasına dayandığıdır. Makale, ticari bankacılık sisteminin nasıl çalıştığını, yani bankaların mevduatlar üzerine borçlanarak para yaratması sürecini detaylandırmaktadır. Ana aktör olarak Federal Rezerv ve merkezi hükümet vurgulanarak, para arzının sürekli genişletilmesi yoluyla ekonomik krizlerin finanse edildiği anlatılmaktadır. Bu durum, para politikasının sadece bir düzenleyici görev olmanın ötesinde, ülkenin varlığını ve yapısal büyümesini mümkün kılan bir varoluş hikayesi olduğu sonucunu doğurmaktadır.", "is_truncated": false, "source_url": "https://mail.blockworks.com/p/how-fake-money-built-america", "source_name": "Blockworks.com", "image_url": "https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/ad2900d4-3049-4a92-ac7b-8c591b8f706c/TheBreakdown_BrandPage.jpg?t=1747365455", "published_at": "07.06.2026"}, {"id": 1, "title_tr": "Fed Yetkilisinden Faiz Artışı Uyarısı: Altın Fiyatları Düşüş Eğiliminde", "summary_tr": "ABD Merkez Bankası (Fed) yetkilisinden gelen faiz artışı beklentileri, piyasalar üzerinde baskı oluşturarak altın fiyatlarının gerilemesine neden oldu. Fed’e bağlı bir yetkili, para politikasının bir sonraki hamlesinin faiz artışı olabileceğine işaret ederek piyasalara dikkat çekti. Ekonomik bağlamda, faiz artırımları genellikle piyasada 'sıkılaşma' anlamına gelir ve bu durum, faiz getirisi olmayan varlıklar olan altına karşı olumsuz bir etki yapar. Yüksek faiz ortamlarında, yatırımcılar genellikle tahvil veya dolar mevduatları gibi daha yüksek getiri potansiyeli olan varlıklara yönelirler, bu da altının yatırım çekiciliğini düşürür. Bu gelişme, küresel piyasalarda faiz döngüsü beklentilerinin temel bir göstergesi olup, faiz hareketlerinin emtia ve döviz kurları üzerindeki korelasyonunu bir kez daha kanıtlamıştır.", "excerpt": "ABD Merkez Bankası (Fed) yetkilisinden gelen faiz artışı beklentileri, piyasalar üzerinde baskı oluşturarak altın fiyatlarının gerilemesine neden oldu. Fed’e bağlı bir yetkili, para politikasının bir sonraki hamlesinin faiz artışı olabileceğine işaret ederek piyasalara dikkat çekti. Ekonomik bağlamda, faiz artırımları genellikle piyasada 'sıkılaşma' anlamına gelir ve bu durum, faiz getirisi olmayan varlıklar olan altına karşı olumsuz bir etki yapar. Yüksek faiz ortamlarında, yatırımcılar genellikle tahvil veya dolar mevduatları gibi daha yüksek getiri potansiyeli olan varlıklara yönelirler, bu da altının yatırım çekiciliğini düşürür. Bu gelişme, küresel piyasalarda faiz döngüsü beklentilerinin temel bir göstergesi olup, faiz hareketlerinin emtia ve döviz kurları üzerindeki korelasyonunu bir kez daha kanıtlamıştır.", "is_truncated": false, "source_url": "https://finance.yahoo.com/markets/commodities/articles/gold-steady-us-iran-signals-235735175.html", "source_name": "Yahoo Entertainment", "image_url": "https://s.yimg.com/ny/api/res/1.2/4dy9LWGqR1_dVwpju.hXVQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://media.zenfs.com/en/bloomberg_holding_pen_162/9091bb7f48ce9e088fff9765b36e8160", "published_at": "07.06.2026"}, {"id": 2, "title_tr": "Ulusal Borç Alarmı: Neden Endişelenmek Zorundayız?", "summary_tr": "Haber, güncel ekonomik ortamda devletin yüksek seviyedeki ulusal borcunun yarattığı yapısal risklere dikkat çekiyor. Genel olarak, artan kamu harcamaları ve mali krizlere verilebilecek tepkiler nedeniyle borçluluk seviyesinin sürdürülebilir olmadığı vurgulanıyor. Bu durumun en büyük kilit aktörleri hükümetler ve merkez bankalarıdır; zira yüksek borç, faiz yüklerini artırarak hükümet bütçesi üzerinde baskı oluşturmaktadır. Önemli olası etkiler arasında, yüksek faiz nedeniyle faiz enflasyonunun tetiklenmesi, kamu hizmetlerine ayrılan bütçenin daralması ve uzun vadede yeni nesillere aktarılacak ağır bir mali yük yer almaktadır. Bu nedenle, siyasetçiler ve mali kuruluşlar, yalnızca kısa vadeli çözümler yerine, borç döngüsünü kıracak köklü reformlar ve mali disiplin mekanizmalarını acilen uygulamak zorundadırlar.", "excerpt": "Haber, güncel ekonomik ortamda devletin yüksek seviyedeki ulusal borcunun yarattığı yapısal risklere dikkat çekiyor. Genel olarak, artan kamu harcamaları ve mali krizlere verilebilecek tepkiler nedeniyle borçluluk seviyesinin sürdürülebilir olmadığı vurgulanıyor. Bu durumun en büyük kilit aktörleri hükümetler ve merkez bankalarıdır; zira yüksek borç, faiz yüklerini artırarak hükümet bütçesi üzerinde baskı oluşturmaktadır. Önemli olası etkiler arasında, yüksek faiz nedeniyle faiz enflasyonunun tetiklenmesi, kamu hizmetlerine ayrılan bütçenin daralması ve uzun vadede yeni nesillere aktarılacak ağır bir mali yük yer almaktadır. Bu nedenle, siyasetçiler ve mali kuruluşlar, yalnızca kısa vadeli çözümler yerine, borç döngüsünü kıracak köklü reformlar ve mali disiplin mekanizmalarını acilen uygulamak zorundadırlar.", "is_truncated": false, "source_url": "https://www.jezebel.com/unfortunately-we-do-have-to-worry-about-the-national-debt", "source_name": "Jezebel", "image_url": "https://img.pastemagazine.com/wp-content/juploads/2026/05/main-President_Ronald_Reagan_during_a_bipartisan_congressional_meeting-with-Dick-Cheney.jpg", "published_at": "07.06.2026"}, {"id": 3, "title_tr": "Morgan Stanley'den Şaşırtıcı Tahmin: Fed, Faiz İndirim Yol Haritasını 2027 İçin Revize Ediyor", "summary_tr": "Büyük yatırım bankalarından Morgan Stanley, Federal Rezerv (Fed) tarafından uygulanacak faiz oranları politikalarına dair beklentilerini yeniden gözden geçirdi. Raporda öne çıkan ana bulgu, piyasa endekslerinin aksine, Fed'in 2027 yılı içinde faiz indirimlerine geçiş yapma ihtimalinin yüksek olduğudur. Bu tahmin, özellikle tahvil piyasalarında hakim olan ve faiz artışlarına odaklanan genel piyasa endişelerine çarpıcı bir tezat oluşturuyor. Morgan Stanley'nin bu revizyonu, Fed'in gelecekteki ekonomik döngüye dair gevşeme eğiliminde olacağına işaret ederek, finansal kurumlar ve şirketler için sermaye maliyeti ve yatırım planları açısından kritik bir bağlam yaratıyor. Bu tahminler, yatırımcıların risk iştahını ve varlık tahsis stratejilerini yeniden değerlendirmesi gerektiği anlamına geliyor.", "excerpt": "Büyük yatırım bankalarından Morgan Stanley, Federal Rezerv (Fed) tarafından uygulanacak faiz oranları politikalarına dair beklentilerini yeniden gözden geçirdi. Raporda öne çıkan ana bulgu, piyasa endekslerinin aksine, Fed'in 2027 yılı içinde faiz indirimlerine geçiş yapma ihtimalinin yüksek olduğudur. Bu tahmin, özellikle tahvil piyasalarında hakim olan ve faiz artışlarına odaklanan genel piyasa endişelerine çarpıcı bir tezat oluşturuyor. Morgan Stanley'nin bu revizyonu, Fed'in gelecekteki ekonomik döngüye dair gevşeme eğiliminde olacağına işaret ederek, finansal kurumlar ve şirketler için sermaye maliyeti ve yatırım planları açısından kritik bir bağlam yaratıyor. Bu tahminler, yatırımcıların risk iştahını ve varlık tahsis stratejilerini yeniden değerlendirmesi gerektiği anlamına geliyor.", "is_truncated": false, "source_url": "https://www.thestreet.com/fed/morgan-stanley-updates-surprising-fed-rate-path-for-2027-with-two-rate-cuts-despite-bond-market-concerns-about-hikes", "source_name": "TheStreet", "image_url": "https://s.yimg.com/os/en/thestreet_881/75aca69930b53f8622657dce8e8d16ad", "published_at": "07.06.2026"}, {"id": 4, "title_tr": "Kritik Merkez Bankası Ataması: ABD Senatosu, Trump'ın FED Başkanı Adayını Onayladı", "summary_tr": "Bu haber, Amerikan ekonomisinin en kritik kurumlarından biri olan Federal Rezerv (FED) Başkanı pozisyonuna yapılan atamayla ilgili önemli bir gelişmeyi aktarıyor. Senato'nun, Donald Trump tarafından önerilen aday üzerinde oy kullanarak onay verdiğini gösteriyor. FED Başkanı, ABD para politikalarının belirleyicisi olduğu için, bu atama sadece bir idari karar olmanın ötesinde, küresel finans piyasaları ve ABD enflasyonu üzerinde doğrudan etkiler yaratma potansiyeli taşıyor. Bu tür politik atamalar genellikle siyasi gerilime yol açar ve piyasa beklentileri ile hükümet yetkileri arasındaki gerilimi artırır. Analistler, yeni başkanın ekonomik duruşunun, faiz politikalarını ve faiz beklentilerini ne kadar süreyle etkileyeceğini yakından izliyor.", "excerpt": "Bu haber, Amerikan ekonomisinin en kritik kurumlarından biri olan Federal Rezerv (FED) Başkanı pozisyonuna yapılan atamayla ilgili önemli bir gelişmeyi aktarıyor. Senato'nun, Donald Trump tarafından önerilen aday üzerinde oy kullanarak onay verdiğini gösteriyor. FED Başkanı, ABD para politikalarının belirleyicisi olduğu için, bu atama sadece bir idari karar olmanın ötesinde, küresel finans piyasaları ve ABD enflasyonu üzerinde doğrudan etkiler yaratma potansiyeli taşıyor. Bu tür politik atamalar genellikle siyasi gerilime yol açar ve piyasa beklentileri ile hükümet yetkileri arasındaki gerilimi artırır. Analistler, yeni başkanın ekonomik duruşunun, faiz politikalarını ve faiz beklentilerini ne kadar süreyle etkileyeceğini yakından izliyor.", "is_truncated": false, "source_url": "https://www.cbc.ca/news/world/kevin-warsh-senate-approves-federal-reserve-chair-trump-9.7198446", "source_name": "CBC News", "image_url": "https://i.cbc.ca/ais/f5b79c47-f4d2-47ca-806e-369564c146b2,1778699660283/full/max/0/default.jpg?im=Crop%2Crect%3D%280%2C312%2C6000%2C3375%29%3BResize%3D620", "published_at": "07.06.2026"}, {"id": 5, "title_tr": "Artan Enflasyon Risklerine Rağmen RBI Neden Faizleri Sabitledi? Para Politikasının Gizemi", "summary_tr": "Bu haber, Hindistan Rezervi Bankası'nın (RBI) enflasyon riskleri yükselmesine rağmen faiz oranlarını sabit tutma kararını mercek altına alıyor. Merkez bankasının bu kararı, ekonomideki büyüme beklentileri ile fiyat istikrarı hedefleri arasındaki hassas dengeyi gözler önüne seriyor. Genellikle yüksek enflasyon baskısı, faiz artırımı gerektirirken, RBI'ın 'bekle ve gör' tutumu, piyasaların dikkatinin anlık fiyat artışlarından ziyade, uzun vadeli ekonomik büyüme potansiyeli ve sektörlerin toparlanma eğrisinde olduğuna odaklandığını gösteriyor. Bu stratejik kararın amacı, finansal piyasalara şok etkisi yapmadan, piyasaların bir miktar nefes almasına izin vererek sermaye akışını teşvik etmek olabilir. Ancak bu sabitleme, piyasalar arasında hem rahatlama hem de endişe yarattı; çünkü enflasyon dinamiklerinin tam olarak çözülmediği bir dönemde faizlerin sabit kalması, gelecekte olası bir faiz artırım beklentisini sürdürmektedir.", "excerpt": "Bu haber, Hindistan Rezervi Bankası'nın (RBI) enflasyon riskleri yükselmesine rağmen faiz oranlarını sabit tutma kararını mercek altına alıyor. Merkez bankasının bu kararı, ekonomideki büyüme beklentileri ile fiyat istikrarı hedefleri arasındaki hassas dengeyi gözler önüne seriyor. Genellikle yüksek enflasyon baskısı, faiz artırımı gerektirirken, RBI'ın 'bekle ve gör' tutumu, piyasaların dikkatinin anlık fiyat artışlarından ziyade, uzun vadeli ekonomik büyüme potansiyeli ve sektörlerin toparlanma eğrisinde olduğuna odaklandığını gösteriyor. Bu stratejik kararın amacı, finansal piyasalara şok etkisi yapmadan, piyasaların bir miktar nefes almasına izin vererek sermaye akışını teşvik etmek olabilir. Ancak bu sabitleme, piyasalar arasında hem rahatlama hem de endişe yarattı; çünkü enflasyon dinamiklerinin tam olarak çözülmediği bir dönemde faizlerin sabit kalması, gelecekte olası bir faiz artırım beklentisini sürdürmektedir.", "is_truncated": false, "source_url": "https://indianexpress.com/article/explained/explained-economics/rbi-repo-rate-unchanged-growth-forecast-cut-inflation-outlook-raised-10725059/", "source_name": "The Indian Express", "image_url": "https://images.indianexpress.com/2026/06/Ch2006538.jpg", "published_at": "07.06.2026"}, {"id": 6, "title_tr": "Iran'dan Kaynaklanan Kriz: Dünya Ekonomisi Dört Dalga Şok Yaşayacak", "summary_tr": "Uzmanlar, İran'dan kaynaklanan bölgesel gerilimlerin sadece jeopolitik bir çatışma olmaktan öte, küresel ekonomiye sistemik bir şok dalgası olarak yansıyacağını belirtiyor. Bu krizin tek bir olayla patlamak yerine, tedarik zinciri aksamaları, enerji fiyat volatilitesi ve yaptırımlar gibi çeşitli ekonomik etkenlerle birlikte dört aşamalı bir seyir izlemesi bekleniyor. Ana aktörler arasında petrol piyasaları, küresel enerji geçiş mekanizmaları ve uluslararası finans kurumları yer alırken, olası etkiler özellikle enflasyon artışı, maliyet şokları ve gelişmekte olan pazarlar için ciddi büyüme yavaşlamaları şeklinde kendini gösterecek. Bu durum, merkez bankalarını geleneksel para politikalarının sınırlarını zorlayan, hem faiz ayarlaması hem de değer zinciri yeniden yapılanması gerektiren kritik kararlar almaya itiyor. Dolayısıyla, bu krizin potansiyel etkileri, sadece petrokimya veya bölgesel ticaretle sınırlı kalmayıp, tüm dünya ticaretini ve para politikası dengesini yeniden tanımlayacak derin bir bağlam oluşturmaktadır.", "excerpt": "Uzmanlar, İran'dan kaynaklanan bölgesel gerilimlerin sadece jeopolitik bir çatışma olmaktan öte, küresel ekonomiye sistemik bir şok dalgası olarak yansıyacağını belirtiyor. Bu krizin tek bir olayla patlamak yerine, tedarik zinciri aksamaları, enerji fiyat volatilitesi ve yaptırımlar gibi çeşitli ekonomik etkenlerle birlikte dört aşamalı bir seyir izlemesi bekleniyor. Ana aktörler arasında petrol piyasaları, küresel enerji geçiş mekanizmaları ve uluslararası finans kurumları yer alırken, olası etkiler özellikle enflasyon artışı, maliyet şokları ve gelişmekte olan pazarlar için ciddi büyüme yavaşlamaları şeklinde kendini gösterecek. Bu durum, merkez bankalarını geleneksel para politikalarının sınırlarını zorlayan, hem faiz ayarlaması hem de değer zinciri yeniden yapılanması gerektiren kritik kararlar almaya itiyor. Dolayısıyla, bu krizin potansiyel etkileri, sadece petrokimya veya bölgesel ticaretle sınırlı kalmayıp, tüm dünya ticaretini ve para politikası dengesini yeniden tanımlayacak derin bir bağlam oluşturmaktadır.", "is_truncated": false, "source_url": "https://www.aljazeera.com/opinions/2026/5/21/the-crises-caused-by-the-iran-war-will-hit-the-world-in-four-waves", "source_name": "Al Jazeera English", "image_url": "https://www.aljazeera.com/wp-content/uploads/2026/03/reuters_69bd21ae-1774002606.jpg?resize=1920%2C1369", "published_at": "07.06.2026"}, {"id": 7, "title_tr": "Hindistan Merkez Bankası'ndan (RBI) Kritik Uyarı: 'Mythos' Siber Tehdidiyle Mücadelede Tam Hazırlık", "summary_tr": "Endişe verici bir siber risk olan 'Mythos' tehdidine karşı hazırlıklı olduklarını açıklayan Hint Rezerv Bankası (RBI), finansal sistemi koruma adına önemli adımlar attı. Bankaların sisteme entegre olabileceği potansiyel riskleri ele alan RBI, sektördeki tüm bankalara detaylı uyarılar yayınladı. Bu tehdit, bankacılık altyapısının güvenliğine yönelik önemli bir zafiyeti işaret ediyor ve finansal kurumların Siber Güvenlik Yönetişimi (Cyber Governance) standartlarını yeniden gözden geçirmesini zorunlu kılıyor. RBI'nın bu açıklamasının, yalnızca bir teknik uyarı olmanın ötesinde, Hindistan'ın genişleyen ve kritik önem taşıyan bankacılık sektörünün istikrarını koruma misyonunun bir parçası olduğu anlaşılmaktadır. Bu gelişme, uluslararası finans ve siber güvenlik alanındaki paydaşlar için sektör risk analizi açısından yüksek bir öneme sahiptir.", "excerpt": "Endişe verici bir siber risk olan 'Mythos' tehdidine karşı hazırlıklı olduklarını açıklayan Hint Rezerv Bankası (RBI), finansal sistemi koruma adına önemli adımlar attı. Bankaların sisteme entegre olabileceği potansiyel riskleri ele alan RBI, sektördeki tüm bankalara detaylı uyarılar yayınladı. Bu tehdit, bankacılık altyapısının güvenliğine yönelik önemli bir zafiyeti işaret ediyor ve finansal kurumların Siber Güvenlik Yönetişimi (Cyber Governance) standartlarını yeniden gözden geçirmesini zorunlu kılıyor. RBI'nın bu açıklamasının, yalnızca bir teknik uyarı olmanın ötesinde, Hindistan'ın genişleyen ve kritik önem taşıyan bankacılık sektörünün istikrarını koruma misyonunun bir parçası olduğu anlaşılmaktadır. Bu gelişme, uluslararası finans ve siber güvenlik alanındaki paydaşlar için sektör risk analizi açısından yüksek bir öneme sahiptir.", "is_truncated": false, "source_url": "https://economictimes.indiatimes.com/industry/banking/finance/banking/rbi-says-fully-prepared-to-tackle-mythos-cyber-threat-advisories-issued-to-banks/articleshow/131532592.cms", "source_name": "The Times of India", "image_url": "https://img.etimg.com/thumb/msid-131532663,width-1200,height-630,imgsize-135954,overlay-economictimes/articleshow.jpg", "published_at": "07.06.2026"}, {"id": 8, "title_tr": "Rekorlar Sindiriliyor: Yatırımcılar Kritik Veri Beklerken Dow Jones Hafif Düşüş Yaşadı", "summary_tr": "Borsa endeksleri, yatırımcıların önceki dönemdeki rekor yükselişleri sindirme sürecinde konsantre bir hareket sergiledi. 5 Haziran tarihinde Dow Jones endeksi, büyük artışların ardından hafif bir düşüş yaşayarak yatırımcıların dikkatini gelecek ekonomik verilere çekti. Piyasaların temel dinamiği, şimdiye kadarki yüksek performans yerine, Merkez Bankaları'nın (CB) politika yapımını etkileyecek kritik makroekonomik verileri beklemektir. Bu tür bekleyiş dönemleri genellikle piyasada bir temkinli satış dalgasına yol açarak, yatırımcıların risk iştahını geçici olarak düşürür. Dolayısıyla düşüş, panik satıştan ziyade, bir sonraki politika sinyaline geçici bir duraklama ve odaklanma olduğunu gösteriyor. Bu durum, yatırımcıların sadece mevcut fiyat hareketine değil, gelecekteki faiz kararları ve enflasyon beklentilerine odaklanmasının önemini vurguluyor.", "excerpt": "Borsa endeksleri, yatırımcıların önceki dönemdeki rekor yükselişleri sindirme sürecinde konsantre bir hareket sergiledi. 5 Haziran tarihinde Dow Jones endeksi, büyük artışların ardından hafif bir düşüş yaşayarak yatırımcıların dikkatini gelecek ekonomik verilere çekti. Piyasaların temel dinamiği, şimdiye kadarki yüksek performans yerine, Merkez Bankaları'nın (CB) politika yapımını etkileyecek kritik makroekonomik verileri beklemektir. Bu tür bekleyiş dönemleri genellikle piyasada bir temkinli satış dalgasına yol açarak, yatırımcıların risk iştahını geçici olarak düşürür. Dolayısıyla düşüş, panik satıştan ziyade, bir sonraki politika sinyaline geçici bir duraklama ve odaklanma olduğunu gösteriyor.", "is_truncated": true, "source_url": "https://www.ibtimes.com.au/dow-jones-dips-after-record-high-1870183", "source_name": "Ibtimes.com.au", "image_url": "https://d.ibtimes.com.au/en/full/1893186/ftse-100-surges-08-today-oil-eases-markets.jpg", "published_at": "07.06.2026"}, {"id": 9, "title_tr": "Fed'den Kritik Uyarı: Bowman, Uzayan Enerji Şokunun Para Politikası Görünümünü Değiştirebileceğini Dedi", "summary_tr": "Federal Rezerv (Fed) yetkililerinden Bowman, küresel ölçekte süregelen ve uzayan enerji şoklarının para politikası beklentilerinde ciddi bir değişim yaratabileceği uyarısında bulundu. Bowman'a göre, enerji fiyatlarındaki belirsizlik, enflasyon baskısının sadece iç talepten değil, dış tedarik şoklarından kaynaklandığını gösteriyor. Bu durum, Fed'in şu anki para sıkılaştırma döngüsünün hesapladığı risk modelini bozma potansiyeli taşıyor. Eğer enerji fiyatları yüksek kalmaya devam ederse, Fed'in faiz artırımlarına ilişkin görüşlerinin revize edilmesi veya politika duruşunun tamamen gözden geçirilmesi gerekebilir. Bu nedenle, yatırımcılar ve ekonomi çevreleri için enerji fiyatlarının seyri ve bu kaynakların enflasyon üzerindeki etkisi, önümüzdeki faiz kararları açısından kritik bir gösterge olarak öne çıkmaktadır.", "excerpt": "Federal Rezerv (Fed) yetkililerinden Bowman, küresel ölçekte süregelen ve uzayan enerji şoklarının para politikası beklentilerinde ciddi bir değişim yaratabileceği uyarısında bulundu. Bowman'a göre, enerji fiyatlarındaki belirsizlik, enflasyon baskısının sadece iç talepten değil, dış tedarik şoklarından kaynaklandığını gösteriyor. Bu durum, Fed'in şu anki para sıkılaştırma döngüsünün hesapladığı risk modelini bozma potansiyeli taşıyor. Eğer enerji fiyatları yüksek kalmaya devam ederse, Fed'in faiz artırımlarına ilişkin görüşlerinin revize edilmesi veya politika duruşunun tamamen gözden geçirilmesi gerekebilir. Bu nedenle, yatırımcılar ve ekonomi çevreleri için enerji fiyatlarının seyri ve bu kaynakların enflasyon üzerindeki etkisi, önümüzdeki faiz kararları açısından kritik bir gösterge olarak öne çıkmaktadır.", "is_truncated": false, "source_url": "https://finance.yahoo.com/news/feds-bowman-says-extended-energy-130013396.html", "source_name": "Yahoo Entertainment", "image_url": "https://s.yimg.com/os/en/reuters.com/9bb9326e86e2cec115dc78e853748f2f", "published_at": "07.06.2026"}];
+
         function changeFontSize(delta) {
             var root = document.documentElement;
             var current = parseFloat(getComputedStyle(root).getPropertyValue('--font-size'));
             var next = Math.min(24, Math.max(13, current + delta));
             root.style.setProperty('--font-size', next + 'px');
-            document.querySelectorAll('.card h2').forEach(function(el) { el.style.fontSize = (next + 2) + 'px'; });
-            document.querySelectorAll('.card p').forEach(function(el) { el.style.fontSize = (next - 2) + 'px'; });
         }
+
+        function openModal(id) {
+            var article = ARTICLES.find(function(a) { return a.id === id; });
+            if (!article) return;
+            var html = '';
+            if (article.image_url) {
+                html += '<img class="modal-img" src="' + article.image_url + '" alt="" onerror="this.style.display=\'none\'">';
+            }
+            html += '<div class="modal-body">';
+            html += '<div class="meta-row">';
+            html += '<span class="badge">' + escapeHtml(article.source_name) + '</span>';
+            html += '<span class="meta-date">' + escapeHtml(article.published_at) + '</span>';
+            html += '</div>';
+            html += '<h2>' + escapeHtml(article.title_tr) + '</h2>';
+            html += '<div class="modal-summary">' + escapeHtml(article.summary_tr).replace(/\n/g, '<br>') + '</div>';
+            html += '<a href="' + article.source_url + '" target="_blank" rel="noopener" class="modal-source">Orijinal kaynaktan oku &rarr;</a>';
+            html += '</div>';
+            document.getElementById('modal-content').innerHTML = html;
+            document.getElementById('modal').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function escapeHtml(s) {
+            if (!s) return '';
+            return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
     </script>
 </body>
 </html>
