@@ -26,151 +26,69 @@
             line-height: 1.7;
             min-height: 100vh;
         }
-
-        /* Header */
         .header {
             background: linear-gradient(135deg, #111420 0%, #0c0e14 100%);
             border-bottom: 1px solid var(--border);
             padding: 40px 0 32px;
         }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-        .header h1 {
-            font-size: 32px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            margin-bottom: 6px;
-        }
-        .header .subtitle {
-            color: var(--text-dim);
-            font-size: 16px;
-        }
-        .header-meta {
-            margin-top: 16px;
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-        .header-meta .stat {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            color: var(--text-muted);
-            font-size: 14px;
-        }
-        .header-meta .stat strong {
-            color: var(--accent);
-            font-size: 18px;
-        }
-
-        /* Font size controls */
-        .controls {
-            display: flex;
-            gap: 8px;
-            margin-left: auto;
-        }
+        .header h1 { font-size: 32px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
+        .header .subtitle { color: var(--text-dim); font-size: 16px; }
+        .header-meta { margin-top: 16px; display: flex; gap: 20px; align-items: center; }
+        .header-meta .stat { display: flex; align-items: center; gap: 6px; color: var(--text-muted); font-size: 14px; }
+        .header-meta .stat strong { color: var(--accent); font-size: 18px; }
+        .controls { display: flex; gap: 8px; margin-left: auto; }
         .controls button {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            color: var(--text-dim);
-            width: 34px;
-            height: 34px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s;
+            background: var(--bg-card); border: 1px solid var(--border); color: var(--text-dim);
+            width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 16px;
+            display: flex; align-items: center; justify-content: center; transition: all 0.2s;
         }
-        .controls button:hover {
-            background: var(--bg-card-hover);
-            color: var(--text);
-        }
-
-        /* Grid */
+        .controls button:hover { background: var(--bg-card-hover); color: var(--text); }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 22px;
             padding: 32px 0 60px;
         }
-
-        /* Card */
         .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 24px;
-            transition: all 0.25s ease;
-            display: flex;
-            flex-direction: column;
-            text-decoration: none;
-            color: inherit;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+            overflow: hidden; transition: all 0.25s ease; display: flex; flex-direction: column;
+            text-decoration: none; color: inherit;
         }
         .card:hover {
-            background: var(--bg-card-hover);
-            border-color: var(--accent);
-            box-shadow: 0 0 24px var(--accent-glow);
-            transform: translateY(-2px);
+            background: var(--bg-card-hover); border-color: var(--accent);
+            box-shadow: 0 0 24px var(--accent-glow); transform: translateY(-2px);
         }
-        .card-source {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin-bottom: 12px;
+        .card-img {
+            width: 100%; height: 200px; object-fit: cover;
+            border-bottom: 1px solid var(--border);
         }
+        .card-img-placeholder {
+            width: 100%; height: 200px;
+            background: linear-gradient(135deg, #1a1f2e 0%, #252b3d 100%);
+            display: flex; align-items: center; justify-content: center;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-muted); font-size: 40px;
+        }
+        .card-body { padding: 20px 22px 22px; display: flex; flex-direction: column; flex: 1; }
+        .card-source { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px; }
         .badge {
-            background: var(--accent);
-            color: white;
-            padding: 3px 10px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            background: var(--accent); color: white; padding: 3px 10px; border-radius: 6px;
+            font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
         }
-        .card-date {
-            color: var(--text-muted);
-            font-size: 13px;
-        }
-        .card h2 {
-            font-size: 19px;
-            font-weight: 700;
-            line-height: 1.4;
-            margin-bottom: 10px;
-            color: var(--text);
-        }
-        .card p {
-            color: var(--text-dim);
-            font-size: 15px;
-            line-height: 1.7;
-            flex: 1;
-        }
+        .card-date { color: var(--text-muted); font-size: 13px; }
+        .card h2 { font-size: 19px; font-weight: 700; line-height: 1.4; margin-bottom: 10px; color: var(--text); }
+        .card p { color: var(--text-dim); font-size: 15px; line-height: 1.7; flex: 1; }
         .card-footer {
-            margin-top: 16px;
-            padding-top: 14px;
-            border-top: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border);
+            display: flex; justify-content: space-between; align-items: center;
         }
-        .read-more {
-            color: var(--accent);
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
-        }
-        .read-more:hover { text-decoration: underline; }
-
-        /* Footer */
+        .read-more { color: var(--accent); font-size: 14px; font-weight: 600; }
         .footer {
-            border-top: 1px solid var(--border);
-            padding: 28px 0;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 14px;
+            border-top: 1px solid var(--border); padding: 28px 0;
+            text-align: center; color: var(--text-muted); font-size: 14px;
         }
-
+        .footer a { color: var(--accent); text-decoration: none; }
         @media (max-width: 720px) {
             .grid { grid-template-columns: 1fr; }
             .header h1 { font-size: 24px; }
@@ -184,8 +102,8 @@
             <h1>Para Politikasi Haberleri</h1>
             <p class="subtitle">Kuresel para politikasi ve merkez bankasi kararlari hakkinda guncel haberler</p>
             <div class="header-meta">
-                <div class="stat"><strong>6</strong> haber</div>
-                <div class="stat">Son guncelleme: <strong>20.05.2026 03:38</strong></div>
+                <div class="stat"><strong>3</strong> haber</div>
+                <div class="stat">Son guncelleme: <strong>06.06.2026 18:39</strong></div>
                 <div class="controls">
                     <button onclick="changeFontSize(-1)" title="Kucultu">A-</button>
                     <button onclick="changeFontSize(1)" title="Buyutu">A+</button>
@@ -196,75 +114,57 @@
     <main class="container">
         <div class="grid">
             
-            <a href="https://www.businessinsider.com/fed-nominee-kevin-warsh-confirmation-hearing-takeaways-ai-fomc-independence-2026-4" target="_blank" rel="noopener" class="card">
-                <div class="card-source">
-                    <span class="badge">Business Insider</span>
-                    <span class="card-date">20.05.2026</span>
-                </div>
-                <h2>Yapay Zeka, Siyasi Tartışmalar ve Fed'in Geleceği: Kevin Warsh'ın Tanımlama Sürecinden 3 Kritik Çıkarım</h2>
-                <p>Bu makale, ABD Merkez Bankası (Fed) Başkanı adayı Kevin Warsh'ın onaylanma dinleme duruşmasından çıkan kilit noktaları analiz ediyor. Haberin arka planı, Warsh'ın sadece bir finansçı olmanın ötesinde, ekonomik gelecek üzerine çığır açıcı görüşler sunduğu yönündeki dikkat çekici tartışmaları içeriyor. Ana konu, Fed'in para politikası kararlarının yapay zekâ (AI) çağındaki teknolojik dönüşüm, jeopolitik riskler ve siyasi bağımsızlık bağlamında nasıl konumlanacağı. Duruşmada ele alınan 'sock puppets' (kuklalar) gibi siyasi eleştiriler, Fed'in politik kararlarının siyasi etkilerden ne kadar bağımsız olabileceği sorusunu ön plana çıkarıyor. Bu gelişmeler, Fed'in gelecekte enflasyonla ve hızla değişen küresel ekonomik yapıyla nasıl mücadele edeceğini göstererek, küresel yatırımcılar ve para politikası meraklıları için yüksek önem taşıyan kritik göstergeler sunmaktadır.</p>
-                <div class="card-footer">
-                    <span class="read-more">Kaynaga git &rarr;</span>
-                </div>
-            </a>
-            
-            <a href="https://www.businessinsider.com/warsh-confirmation-hearings-what-smart-people-are-saying-2026-4" target="_blank" rel="noopener" class="card">
-                <div class="card-source">
-                    <span class="badge">Business Insider</span>
-                    <span class="card-date">20.05.2026</span>
-                </div>
-                <h2>Kevin Warsh Etkisi: Finans Dünyası, Federal Rezerv'in Gelecek Dönem Politikalarını Tartışıyor</h2>
-                <p>Bu haber, finans ve ekonomideki önde gelen isimlerin, Federal Rezerv'in (Fed) yapısı ve para politikası üzerindeki potansiyel reformları tartıştığı bir tartışmanın özeti niteliğindedir. Merkez bankaları küresel ekonomiler için kritik öneme sahip olduğundan, Fed'nin geleceği sürekli ilgi odağıdır. Kevin Warsh gibi üst düzey uzmanların bu tartışmalara dahil olması, Fed'nin sadece faiz kararları vermekle kalmayıp, aynı zamanda düzenleyici çerçeveler ve piyasa işleyiş biçimleri üzerinde de büyük değişikliklere gitme eğiliminde olabileceğine işaret ediyor. Uzmanlar, bu reformların, Fed'nin şeffaflığını artırmasını, bölgesel ekonomik farklılıklara daha hassas politikalar uygulamayı ve küresel finansal sistemdeki krizlere karşı daha sağlam bir yapı oluşturmasını gerektirebileceği görüşünde. Bu tartışmaların takibi, sadece ABD piyasalarını değil, tüm gelişmekte olan ülkeleri ve küresel sermaye akışlarını doğrudan etkileyeceği için kritik bir öneme sahiptir.</p>
-                <div class="card-footer">
-                    <span class="read-more">Kaynaga git &rarr;</span>
+            <a href="https://abcnews.com/Business/central-bank-faces-political-stress-test-threatens-economy/story?id=133479923" target="_blank" rel="noopener" class="card">
+                
+                <img class="card-img" src="https://i.abcnewsfe.com/a/bbafe331-3dad-4f66-9437-568d369b614a/powell-gty-jef-260601_1780325249609_hpMain_16x9.jpg?w=1600" alt="Powell'dan Uyarı: Fed, Ekonomiyi Tehlikeye Atacak Politik Baskı Testiyle Karşılaşıyor" loading="lazy"
+                     onerror="this.outerHTML='<div class=card-img-placeholder>&#128240;</div>'">
+                
+                <div class="card-body">
+                    <div class="card-source">
+                        <span class="badge">Abcnews.com</span>
+                        <span class="card-date">06.06.2026</span>
+                    </div>
+                    <h2>Powell'dan Uyarı: Fed, Ekonomiyi Tehlikeye Atacak Politik Baskı Testiyle Karşılaşıyor</h2>
+                    <p>ABD Merkez Bankası (Fed) Başkanı Jerome Powell, Fed'in bağımsızlığını tehdit eden yoğun siyasi baskılarla karşı karşıya olduğunu belirterek bu durumun ekonomiyi tehlikeye atabileceği uyarısında bulundu. Powell'a göre, para politikalarının siyasi gündem maddelerine indirgenmesi, Fed'in kredi ve faiz kararlarındaki objektifliğini zedelemektedir. Merkez bankalarının, enflasyonla mücadele veya ekonomik yavaşlama dönemlerinde tarafsız ve bağımsız hareket etmesi hayati önem taşırken, politik müdahaleler bu güvenilirliği temelden sarsmaktadır. Bu durum, piyasa öngörülebilirliğini azaltarak şirket yatırım kararlarını olumsuz etkileyebilir ve ekonomik büyüme yörüngesinde belirsizlik yaratabilir. Dolayısıyla, Powell'ın uyarısı, merkez bankası bağımsızlığının ve küresel finansal istikrarın ne kadar kritik bir konu olduğunu bir kez daha gözler önüne sermektedir.</p>
+                    <div class="card-footer">
+                        <span class="read-more">Kaynaga git &rarr;</span>
+                    </div>
                 </div>
             </a>
             
-            <a href="https://www.businessinsider.com/april-fed-takeaways-kevin-warsh-jerome-powell-legacy-interest-rates-2026-4" target="_blank" rel="noopener" class="card">
-                <div class="card-source">
-                    <span class="badge">Business Insider</span>
-                    <span class="card-date">20.05.2026</span>
-                </div>
-                <h2>Powell'dan Yeni Dönem: Oy Birliği Eksikliği, Petrol Şokları ve Fed'in Geleceği Üzerine Üç Kritik Çıkarım</h2>
-                <p>Bu makale, Fed Başkanı Jerome Powell'ın yaptığı son faiz kararları ışığında, Amerika Merkez Bankası'nın (Fed) karşı karşıya olduğu yapısal zorlukları derinlemesine inceliyor. Analiz, sadece faiz artış/indirim kararlarının ötesinde, Fed içindeki görüş ayrılıklarının (dissents) yarattığı politik belirsizlikleri öne çıkarıyor. Ayrıca, küresel tedarik zincirlerini ve enflasyonu sürekli tetikleyen enerji fiyatlarındaki (petrol şokları) dalgalanmaların, Fed'in para politikası araçları üzerindeki kalıcı baskısını ele alıyor. Bu durum, Fed'in güvenilirliğine ve uzun vadeli stratejik yol haritasına dair şüpheleri beraberinde getiriyor. Makale, bu üç temel dinamik üzerinden; piyasaların dikkat etmesi gereken ana noktaları, gelecekteki faiz döngülerinin potansiyel eşikleri ve jeopolitik risklerin etkilerini okuyucuya sunarak kapsamlı bir bağlam sağlıyor.</p>
-                <div class="card-footer">
-                    <span class="read-more">Kaynaga git &rarr;</span>
-                </div>
-            </a>
-            
-            <a href="https://www.businessinsider.com/charts-fed-chair-jerome-powell-jobs-inflation-interest-rates-2026-4" target="_blank" rel="noopener" class="card">
-                <div class="card-source">
-                    <span class="badge">Business Insider</span>
-                    <span class="card-date">20.05.2026</span>
-                </div>
-                <h2>Powell Döneminde ABD Ekonomisi Nasıl Seyretti? 5 Kritik Grafikle Detaylı Analiz</h2>
-                <p>Bu makale, Amerika Birleşik Devletleri Federal Rezerv'in (Fed) Başkanı Jerome Powell'ın görev yaptığı dönemdeki makroekonomik süreçleri beş farklı grafik üzerinden analiz etmektedir. Temel olarak, ABD ekonomisinin işgücü piyasası, enflasyon oranları, faiz hareketleri ve genel ekonomik büyüme gibi kritik göstergelerinin zaman içindeki seyri inceleniyor. Analizin arka planı, Fed'in para politikası araçlarını kullanarak ekonomiyi sürekli bir denge arayışında tutmasıdır. Kilit aktörler arasında Fed'in kendisi ve ekonomik veriler bulunmaktadır. Bu grafikler, Fed'in uyguladığı faiz artırımlarının veya gevşetimlerinin piyasa üzerindeki etkilerini somutlaştırarak, okuyuculara yalnızca güncel değil, aynı zamanda geçmişteki eğilimleri de anlamaları için kapsamlı bir bağlam sunuyor. Bu analiz, hem yatırımcıların gelecekteki faiz beklentilerini oluşturması hem de küresel ticari hareketleri yönetmesi açısından hayati öneme sahiptir.</p>
-                <div class="card-footer">
-                    <span class="read-more">Kaynaga git &rarr;</span>
-                </div>
-            </a>
-            
-            <a href="https://www.npr.org/2026/05/14/g-s1-122014/up-first-newsletter-china-taiwan-trump-law-firms-kevin-warsh-denise-powell-nebraska" target="_blank" rel="noopener" class="card">
-                <div class="card-source">
-                    <span class="badge">NPR</span>
-                    <span class="card-date">20.05.2026</span>
-                </div>
-                <h2>Jeopolitik Baskı ve Merkez Bankası Değişimi: Trump'tan Çin'de Diplomatik Hamleler, Senato'dan Fed Lideri Onayı</h2>
-                <p>Bu kapsamlı rapor, küresel ticaret ve ABD para politikasındaki iki büyük gelişmeyi ele almaktadır. Bir yandan Donald Trump'ın Çin ile ticaret anlaşmaları yapma çabaları, ABD'nin jeopolitik rekabetini ve ticaret gerilimlerini ön plana çıkarmaktadır. Öte yandan, Senato'nun Kevin Warsh'ı Federal Rezerv (Fed) lideri olarak onaylaması, ABD finans sistemindeki yapısal değişikliklere işaret etmektedir. Bu iki gelişme, uluslararası yatırımcılar için kritik bir bağlam oluşturmaktadır; çünkü ticari anlaşmalar enflasyon beklentilerini değiştirirken, Fed liderliğindeki değişim para politikalarının tonunu ve faiz yönelimini doğrudan etkileyecektir. Haberin tamamı, ticaret hukuku, ABD kanunları ve merkez bankası yönetiminin kesiştiği karmaşık bir dönemdeki ekonomik dinamikleri okuyuculara sunmaktadır.</p>
-                <div class="card-footer">
-                    <span class="read-more">Kaynaga git &rarr;</span>
+            <a href="https://finance.yahoo.com/news/warsh-wins-confirmation-fed-chair-185050168.html" target="_blank" rel="noopener" class="card">
+                
+                <img class="card-img" src="https://s.yimg.com/os/en/reuters.com/be378585eefe9c8095d28ca97d4711c2" alt="Fed Başkanı Warsh Görevde: Enflasyon Tehlikesi Gölgesinde Kritik Dönem" loading="lazy"
+                     onerror="this.outerHTML='<div class=card-img-placeholder>&#128240;</div>'">
+                
+                <div class="card-body">
+                    <div class="card-source">
+                        <span class="badge">Yahoo Entertainment</span>
+                        <span class="card-date">06.06.2026</span>
+                    </div>
+                    <h2>Fed Başkanı Warsh Görevde: Enflasyon Tehlikesi Gölgesinde Kritik Dönem</h2>
+                    <p>Bu haber, finansal piyasalar için büyük öneme sahip, kritik bir gelişmeyi aktarıyor: Warsh'ın Federal Rezerv (Fed) Başkanlığı görevine atanması ve göreve başlaması. Yeni Başkanlığın göreve gelmesi, ABD ekonomisi için önemli bir dönem başlangıcını işaret ederken, en büyük zorluk arka planda duran yüksek enflasyondur. Warsh'ın önünde, artan yaşam maliyetleri ve güçlü fiyat baskıları kaynaklı enflasyonu kontrol altına alma misyonu bulunuyor. Bu durum, Fed'in faiz oranları ve para politikaları açısından ihtiyatlı ve potansiyel olarak kısıtlayıcı adımlar atmasını gerektirecek. Piyasa analistleri, bu yeni liderlik döneminin, enflasyonu düşürmeye yönelik agresif bir politika dilini sürdürüp sürdüremeyeceğini yakından takip ediyor. Dolayısıyla haber, sadece bir başkan değişikliği değil, küresel ekonomilerin geleceğini belirleyecek bir para politikası dönüm noktasını işaret etmektedir.</p>
+                    <div class="card-footer">
+                        <span class="read-more">Kaynaga git &rarr;</span>
+                    </div>
                 </div>
             </a>
             
             <a href="https://www.businessinsider.com/ray-dalio-financial-crisis-stagflation-money-printing-us-economy-outlook-2026-5" target="_blank" rel="noopener" class="card">
-                <div class="card-source">
-                    <span class="badge">Business Insider</span>
-                    <span class="card-date">20.05.2026</span>
-                </div>
-                <h2>Milyarder Ray Dalio'dan Sert Uyarı: ABD'de Durgunluk-Enflasyon Krizi Senaryosu</h2>
-                <p>Makroekonomi uzmanı ve milyarder yatırımcı Ray Dalio, ABD ekonomisinin geleceği hakkında derin bir alarm vererek potansiyel bir 'durgunluk-enflasyon' (stagflasyon) finansal kriz senaryosunu ortaya koyuyor. Dalio'ya göre, küresel çapta artan ve sürdürülebilir olmayan para basma politikaları, ekonomik bir durgunluk ile yüksek enflasyonun birleşimi şeklinde kritik bir döneme işaret ediyor. Bu senaryoya göre, merkezi bankaların müdahalesi ve sürekli likidite pompalanması, varlık balonlarını şişirirken, aynı zamanda yapısal eşitsizlikleri derinleştirebilir. Dalio, mevcut para politikalarının, geleneksel ekonomik döngü modellerinin öngördüğü olumlu dönüş yerine, daha kaotik ve yönetilmesi zor bir krize yol açma riskini taşıdığını vurguluyor. Bu analiz, yatırımcılar ve politika yapıcılar için yüksek riskli bir dönem yaklaştığı uyarısını taşıdığından, güncel para ve faiz hareketleri açısından hayati önem taşımaktadır.</p>
-                <div class="card-footer">
-                    <span class="read-more">Kaynaga git &rarr;</span>
+                
+                <img class="card-img" src="https://i.insider.com/69fc8a363cfefc31768d687e?width=1200&format=jpeg" alt="Milyarder Dalio'dan Kritik Uyarı: ABD'yi Bekleyen Stagflasyon Krizi Nasıl Gelişecek?" loading="lazy"
+                     onerror="this.outerHTML='<div class=card-img-placeholder>&#128240;</div>'">
+                
+                <div class="card-body">
+                    <div class="card-source">
+                        <span class="badge">Business Insider</span>
+                        <span class="card-date">06.06.2026</span>
+                    </div>
+                    <h2>Milyarder Dalio'dan Kritik Uyarı: ABD'yi Bekleyen Stagflasyon Krizi Nasıl Gelişecek?</h2>
+                    <p>Ünlü yatırımcı ve makroekonomist Ray Dalio, ABD ekonomisinin potansiyel olarak bir 'stagflasyon' (durgunluk ve yüksek enflasyon) finansal krizine girebileceği konusunda ciddi bir uyarıda bulundu. Dalio'ya göre, bu tür bir kriz, merkez bankalarının artan para basım politikaları ve küresel tedarik zinciri aksamaları sonucu ortaya çıkabilir. Beklediği senaryoda, yüksek enflasyon görülmesine rağmen ekonomik büyümenin yavaşlaması veya durması bekleniyor; bu durum, yatırımcılar ve hükümetler için büyük bir belirsizlik yaratıyor. Dalio, bu sürecin, geçmişteki ekonomik yıkım senaryolarını andıracak bir mali ve finansal kaosa yol açabileceğini ve piyasaların mevcut para politikalarından kaynaklanan riskleri göz ardı etmemesi gerektiğini vurguluyor. Bu analiz, makroekonomik düşündüklerimizi, portföy yönetim stratejilerimizi ve küresel finansal riskleri anlamamız açısından hayati önem taşıyor.</p>
+                    <div class="card-footer">
+                        <span class="read-more">Kaynaga git &rarr;</span>
+                    </div>
                 </div>
             </a>
             
@@ -272,7 +172,7 @@
     </main>
     <footer class="footer">
         <div class="container">
-            Yenisey ile olusturuldu &middot; Icerikler otomatik derlenmekte ve Turkce'ye cevrilmektedir
+            Yenisey ile olusturuldu &middot; Icerikler kaynaklarindan derlenmekte ve Turkce'ye cevrilmektedir
         </div>
     </footer>
     <script>
@@ -281,12 +181,8 @@
             var current = parseFloat(getComputedStyle(root).getPropertyValue('--font-size'));
             var next = Math.min(24, Math.max(13, current + delta));
             root.style.setProperty('--font-size', next + 'px');
-            document.querySelectorAll('.card h2').forEach(function(el) {
-                el.style.fontSize = (next + 2) + 'px';
-            });
-            document.querySelectorAll('.card p').forEach(function(el) {
-                el.style.fontSize = (next - 2) + 'px';
-            });
+            document.querySelectorAll('.card h2').forEach(function(el) { el.style.fontSize = (next + 2) + 'px'; });
+            document.querySelectorAll('.card p').forEach(function(el) { el.style.fontSize = (next - 2) + 'px'; });
         }
     </script>
 </body>
