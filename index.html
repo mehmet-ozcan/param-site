@@ -193,6 +193,8 @@
         .modal-body { padding: 28px; }
         .modal h2 { font-size: 26px; font-weight: 800; line-height: 1.3; margin: 12px 0 16px; }
         .modal-summary { color: var(--text); font-size: 16px; line-height: 1.8; margin-bottom: 22px; }
+        .modal-summary p { margin-bottom: 14px; }
+        .modal-summary p:last-child { margin-bottom: 0; }
         .modal-source {
             display: inline-block; background: var(--accent); color: white;
             padding: 10px 18px; border-radius: 8px;
@@ -222,10 +224,10 @@
     <header class="header">
         <div class="container">
             <h1>Para Politikasi Haberleri</h1>
-            <p class="subtitle">Para politikasi haberleri</p>
+            <p class="subtitle">En güncel vaka güncellemeleri</p>
             <div class="header-meta">
-                <div class="stat"><strong>9</strong> haber</div>
-                <div class="stat">Son guncelleme: <strong>07.06.2026 21:13</strong></div>
+                <div class="stat"><strong>1</strong> haber</div>
+                <div class="stat">Son guncelleme: <strong>07.06.2026 22:03</strong></div>
                 <div class="controls">
                     <button onclick="changeFontSize(-1)" title="Kucult">A-</button>
                     <button onclick="changeFontSize(1)" title="Buyut">A+</button>
@@ -244,144 +246,20 @@
                 
                 <div class="hero-main-body">
                     <div class="meta-row">
-                        <span class="badge">Google News</span>
+                        <span class="badge">Nytimes</span>
                         <span class="meta-date">07.06.2026</span>
                     </div>
-                    <h2>Zorlu Koşullara Rağmen Türk Enflasyon Düşüş Yolu Sağlamlığını Koruyor: OECD - Türkiye Bugün</h2>
-                    <p class="excerpt">OECD, Türkiye'nin enflasyon düşüş yolundaki ilerlemesinin, makroekonomik rüzgar karşıtı zorluklara rağmen sağlamlığını sürdürdüğünü belirtti. Bu bulgu, OECD tarafından yayınlanan ve 'Türkiye Bugün' başlığı altında sunulan analizde yer almaktadır. Rapor, Türk ekonomisinin enflasyonla mücadeledeki genel eğilimini yakından izlemesi gerektiğini vurgulamaktadır. OECD, bu yolun, öngörülen makroekonomik hedeflere ulaşmada kritik bir rol oynamaya devam ettiğini ifade etmektedir.</p>
+                    <h2>Aylar Süren Savaşın Ardından İranlılar Hayal Kırıklığı ve Umutsuzluğa Kapılıyor - The New York Times</h2>
+                    <p class="excerpt">Aylar süren çatışmaların ve gerilimin ardından İran toplumunda derin bir hayal kırıklığı ve umutsuzluk dalgası yaşanıyor. Savaşın hem ekonomik hem de sosyal dokuya vurduğu ağır darbe, halkın siyasi ve ekonomik geleceği hakkındaki beklentilerini yerle bir etmiş durumda. Uzmanlar, bu ruh halinin sadece askeri yorgunluktan değil, aynı zamanda yıllardır süregelen yüksek enflasyon, yaşam maliyetlerindeki artış ve temel hizmetlere erişimdeki aksamalardan kaynaklandığını belirtiyor.</p>
                 </div>
             </article>
 
             <div class="hero-side">
                 
-                <article class="hero-side-card" data-id="1" onclick="openModal(1)">
-                    
-                    <div class="hero-side-img-placeholder">&#128240;</div>
-                    
-                    <div class="hero-side-body">
-                        <div class="meta-row">
-                            <span class="badge">Google News</span>
-                        </div>
-                        <h3>Merkez Bankacıları Türkiye'yi Bir Uyarı Olarak Kullanıyor - Financial Times</h3>
-                        <span class="meta-date">07.06.2026</span>
-                    </div>
-                </article>
-                
-                <article class="hero-side-card" data-id="2" onclick="openModal(2)">
-                    
-                    <div class="hero-side-img-placeholder">&#128240;</div>
-                    
-                    <div class="hero-side-body">
-                        <div class="meta-row">
-                            <span class="badge">Google News</span>
-                        </div>
-                        <h3>Türkiye Merkez Bankası, Enflasyonla Mücadeledeki Çabasını Sadeleştirdi</h3>
-                        <span class="meta-date">07.06.2026</span>
-                    </div>
-                </article>
-                
-                <article class="hero-side-card" data-id="3" onclick="openModal(3)">
-                    
-                    <img class="hero-side-img" src="https://image.hurimg.com/i/hurriyet/75/200x200/6a2144c7ba1efe630db570a2.jpg" alt=""
-                         onerror="this.outerHTML='<div class=hero-side-img-placeholder>&#128240;</div>'">
-                    
-                    <div class="hero-side-body">
-                        <div class="meta-row">
-                            <span class="badge">Hurriyet Daily News</span>
-                        </div>
-                        <h3>Şimşek: Enflasyon Yıl Sonu Ortası İkizi Seviyesinde Bitecek</h3>
-                        <span class="meta-date">07.06.2026</span>
-                    </div>
-                </article>
-                
             </div>
         </div>
         
 
-        
-        <h2 class="section-title">Tüm Haberler</h2>
-        <div class="grid">
-            
-            <article class="card" data-id="4" onclick="openModal(4)">
-                
-                <div class="card-img-placeholder">&#128240;</div>
-                
-                <div class="card-body">
-                    <div class="meta-row">
-                        <span class="badge">NPR Topics: Economy</span>
-                        <span class="meta-date">07.06.2026</span>
-                    </div>
-                    <h3>Trump'ın Baskısına Rağmen, Yüksek Yakıt Fiyatları Fed'i Faiz İndirimi Yapmaktan Men Edebilir</h3>
-                    <p class="excerpt">Rapor, ABD Merkez Bankası'nın (Fed) faiz indirimleri konusunda zorlanabileceğini belirtiyor. Bu zorluğun ana nedenlerinden biri, yüksek yakıt fiyatlarının piyasadaki etkisidir. Habere göre, bu fiyat baskısı, Fed'in faiz politikalarında beklenen gevşemeyi yapmasını engelleyebilir. Ayrıca, Donald Trump'ın politik baskılarının da Fed'in faiz kararları üzerindeki etkisinin bir faktör olduğu görülüyor. Bu durum, finans çevrelerinde faiz oranları konusunda belirsiz bir ortam yaratıyor.</p>
-                    
-                </div>
-            </article>
-            
-            <article class="card" data-id="5" onclick="openModal(5)">
-                
-                <img class="card-img" src="https://image.hurimg.com/i/hurriyet/75/200x200/6a1e9695cd2f8ff319452367.jpg" alt=""
-                     onerror="this.outerHTML='<div class=card-img-placeholder>&#128240;</div>'">
-                
-                <div class="card-body">
-                    <div class="meta-row">
-                        <span class="badge">Hurriyet Daily News</span>
-                        <span class="meta-date">07.06.2026</span>
-                    </div>
-                    <h3>Küresel İslami Ekonomi Zirvesi İstanbul'da Başladı</h3>
-                    <p class="excerpt">Üçüncü Küresel İslami Ekonomi Zirvesi, küresel politika yapıcılar, merkez bankası yöneticileri, yatırımcılar, finans kurumları, akademisyenler ve sektör temsilcilerini bir araya getirerek İstanbul'da başladı. 3-6 Haziran tarihleri arasında Halkbank merkezinde İstanbul Finans Merkezi'nde düzenlenecek olan dört günlük zirve, AlBaraka İslami Ekonomi Forumu tarafından organize ediliyor. Bu yılki etkinlik, 'İslami Ekonomide Sermaye: Sürdürülebilir Kalkınma İçin Zenginlik Yapılandırma' teması altında toplanıyor. Zirvede yapay zeka, dijital dönüşüm, dijital sermaye, finansal inovasyon ve İslami fintech gibi konularda oturumlar düzenlenecek. Ayrıca, Türkiye Cumhuriyet Merkez Bankası Başkanı Fatih Karahan, Bank Negara Malaysia Başkanı Abdul Rasheed Ghaffour ve Filistin Para Otoritesi Başkanı Yahya Jawdat Hafez Şunnar’ın katılımıyla merkez bankası yöneticileri ve bakanları özel bir panel gerçekleştirilecek.</p>
-                    <span class="read-more">Devamını oku →</span>
-                </div>
-            </article>
-            
-            <article class="card" data-id="6" onclick="openModal(6)">
-                
-                <img class="card-img" src="https://image.hurimg.com/i/hurriyet/75/200x200/6a0588d9e02130392c72bf89.jpg" alt=""
-                     onerror="this.outerHTML='<div class=card-img-placeholder>&#128240;</div>'">
-                
-                <div class="card-body">
-                    <div class="meta-row">
-                        <span class="badge">Hurriyet Daily News</span>
-                        <span class="meta-date">07.06.2026</span>
-                    </div>
-                    <h3>Merkez Bankası 2026 enflasyon tahminini %26'ya çıkardı</h3>
-                    <p class="excerpt">Türkiye Cumhuriyet Merkez Bankası, bölgedeki savaşın etkilerini, artan enerji fiyatlarını ve küresel görünümdeki belirsizliği gerekçe göstererek 2026 yılı yıl sonu enflasyon tahminini %26'ya yükseltti. Bankanın yılın ikinci enflasyon raporunda konuşan Genel Müdür Fatih Karahan, son jeopolitik şokun deflasyon sürecini yavaşlattığını, ancak bunun bankanın fiyat istikrarına yönelik taahhüdünü değiştirmeyeceğini belirtti. Karahan, savaş ve yarattığı belirsizliğin deflasyon sürecini olumsuz etkilediğini ancak fiyat istikrarına ulaşma kararlılıklarının değişmeyeceğini kaydetti. Merkez Bankası, 2027 sonunda enflasyonun %15'e, 2028 sonunda %9'a düşerek orta vadeli %5 hedefine sabitlenmesini bekliyor. Karahan, jeopolitik şok sonrası varsayımlardaki olağanüstü güncellemeler nedeniyle ara hedefleri de 2026 için %24, 2027 için %15 ve 2028 için %9 olarak artırdı.</p>
-                    <span class="read-more">Devamını oku →</span>
-                </div>
-            </article>
-            
-            <article class="card" data-id="7" onclick="openModal(7)">
-                
-                <img class="card-img" src="https://s.yimg.com/os/en/reuters.com/bf8999785ca87868b977a896426fa00f" alt=""
-                     onerror="this.outerHTML='<div class=card-img-placeholder>&#128240;</div>'">
-                
-                <div class="card-body">
-                    <div class="meta-row">
-                        <span class="badge">Yahoo Entertainment</span>
-                        <span class="meta-date">07.06.2026</span>
-                    </div>
-                    <h3>Yatırımcılar ABD-İran görüşmelerine odaklanınca hisse senetleri yükseldi, tahvil getirileri düştü</h3>
-                    <p class="excerpt">Hisse senedi endeksleri ve Hazine getirileri Cuma günü yükseldi ve düştü; yatırımcılar, ABD ile İran arasındaki çatışmayı sona erdirecek yakın bir anlaşmanın olasılığını değerlendiriyor. Petrol fiyatları yükseldi ancak İran görüşmeleri etrafındaki belirsizlik hala bir endişe kaynağı olarak duruyor. ABD Dışişleri Bakanı Marco Rubio, Amerika Birleşik Devletleri'nin İran ile bir anlaşmaya doğru ilerleme kaydettiğini, ancak daha fazla çalışmanın gerektiğini belirtti. Wall Street'te Dow endeksi rekor kapanış yaparken, S&P 500 endeksi üst üste sekizinci hafta artış kaydetti. Bu yükselişler, savaşın ekonomik sonuçlarına dair endişeler devam etse de, yapay zeka (AI) ile ilgili hisselere olan artan taleple desteklendi.</p>
-                    <span class="read-more">Devamını oku →</span>
-                </div>
-            </article>
-            
-            <article class="card" data-id="8" onclick="openModal(8)">
-                
-                <img class="card-img" src="https://image.hurimg.com/i/hurriyet/75/200x200/6a0986d2e02130392c72c8d7.jpg" alt=""
-                     onerror="this.outerHTML='<div class=card-img-placeholder>&#128240;</div>'">
-                
-                <div class="card-body">
-                    <div class="meta-row">
-                        <span class="badge">Hurriyet Daily News</span>
-                        <span class="meta-date">07.06.2026</span>
-                    </div>
-                    <h3>Ortadoğu Çatışması, Faiz İndirimi Beklentilerini Bozdu</h3>
-                    <p class="excerpt">Ortadoğu'da devam eden çatışma, Türkiye Cumhuriyet Merkez Bankası'nın (TCMB) faiz kararları etrafındaki beklentileri önemli ölçüde aksattı. Enerji ve ulaştırma maliyetlerindeki artışın küresel enflasyona etkisiyle, savaşın petrol, doğalgaz ve emtia fiyatları üzerinde artırıcı baskı yaratması sonucunda, hem yerel piyasa katılımcıları hem de büyük uluslararası bankalar faiz indirimi beklentilerini en az iki ay erteletti. TCMB, 28 Şubat'ta başlayan gerilim tırmanışının ardından artan emtia fiyatları karşısında ihtiyati tedbir alarak, Mart ayında bir haftalık repo açık artışlarını durdurmuş ve likidite araçları üzerinden para sıkılaştırmasına geçerek fonlamayı %40 seviyesindeki faiz koridorunun üst bandına çekmiştir. Banka, Mayıs 2026 Piyasa Katılımcıları Anketi'ne göre faiz indirim beklentilerini sonbahara ertelerken, piyasalar politik faizin 11 Haziran ve 23 Temmuz'daki Para Politikası Kurulu (PPK) toplantılarında sabit kalmasını bekliyor; ilk faiz indirimi ise Eylül ayında 100 baz puan olarak tahmin ediliyor.</p>
-                    
-                </div>
-            </article>
-            
-        </div>
         
     </main>
 
@@ -408,7 +286,7 @@
     </footer>
 
     <script>
-        var ARTICLES = [{"id": 0, "title_tr": "Zorlu Koşullara Rağmen Türk Enflasyon Düşüş Yolu Sağlamlığını Koruyor: OECD - Türkiye Bugün", "summary_tr": "OECD, Türkiye'nin enflasyon düşüş yolundaki ilerlemesinin, makroekonomik rüzgar karşıtı zorluklara rağmen sağlamlığını sürdürdüğünü belirtti. Bu bulgu, OECD tarafından yayınlanan ve 'Türkiye Bugün' başlığı altında sunulan analizde yer almaktadır. Rapor, Türk ekonomisinin enflasyonla mücadeledeki genel eğilimini yakından izlemesi gerektiğini vurgulamaktadır. OECD, bu yolun, öngörülen makroekonomik hedeflere ulaşmada kritik bir rol oynamaya devam ettiğini ifade etmektedir.", "excerpt": "OECD, Türkiye'nin enflasyon düşüş yolundaki ilerlemesinin, makroekonomik rüzgar karşıtı zorluklara rağmen sağlamlığını sürdürdüğünü belirtti. Bu bulgu, OECD tarafından yayınlanan ve 'Türkiye Bugün' başlığı altında sunulan analizde yer almaktadır. Rapor, Türk ekonomisinin enflasyonla mücadeledeki genel eğilimini yakından izlemesi gerektiğini vurgulamaktadır. OECD, bu yolun, öngörülen makroekonomik hedeflere ulaşmada kritik bir rol oynamaya devam ettiğini ifade etmektedir.", "is_truncated": false, "source_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPNHBpMXZlakxncmV2VXVIdV9uSlRjYkFKV1pSSkdBc2NCaHVYVERPYUlsOGhkMFg4eVNSMWJkQ0lPMnYxYTEwcWtPbVRYY3Y1bnJZZnFhOEkxQWhmVHdibkZDSUlnMVJ1WVJzczN0NVBXdmthQTJNY3VnYWJsUkFZeTZwWE04N2o1QmUyT09CRHRBcUczelY5ZGd5TTlIRXFKdkJyaUM4WTdfWFI1VlE?oc=5", "source_name": "Google News", "image_url": "", "published_at": "07.06.2026"}, {"id": 1, "title_tr": "Merkez Bankacıları Türkiye'yi Bir Uyarı Olarak Kullanıyor - Financial Times", "summary_tr": "Finansal Times'a göre, merkez bankalarındaki figürler Türkiye ekonomisini bir uyarı örneği olarak kullanıyor. Bu merkez bankacıları, ülkede yaşanan ekonomik durumu küresel bir dikkat çekici nokta olarak konumlandırıyor. Görüşlere göre, Türkiye'nin mevcut para politikaları ve ekonomik eğilimleri, gelişmekte olan piyasalara yönelik riskli bir tablo çiziyor. Bu durum, küresel finans çevrelerinde tartışmalara neden oluyor.", "excerpt": "Finansal Times'a göre, merkez bankalarındaki figürler Türkiye ekonomisini bir uyarı örneği olarak kullanıyor. Bu merkez bankacıları, ülkede yaşanan ekonomik durumu küresel bir dikkat çekici nokta olarak konumlandırıyor. Görüşlere göre, Türkiye'nin mevcut para politikaları ve ekonomik eğilimleri, gelişmekte olan piyasalara yönelik riskli bir tablo çiziyor. Bu durum, küresel finans çevrelerinde tartışmalara neden oluyor.", "is_truncated": false, "source_url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNNmJUTTI3Mm9HS3h0MUNFZ1VfNjM1c1JwSmdzQ00wZVdRdkxBVHp6bVFtcjBUM1ZleGd6RkpSOTAzMUZaVGxFYTBfZDMyVG9xTGVPa21RX0JNUVk0V1Z3SmpMMkk5dnM5ZDhLYjUyU0xxQzlVVFhEb1NtYWgxLWowbUxuN2I?oc=5", "source_name": "Google News", "image_url": "", "published_at": "07.06.2026"}, {"id": 2, "title_tr": "Türkiye Merkez Bankası, Enflasyonla Mücadeledeki Çabasını Sadeleştirdi", "summary_tr": "The Economist'a göre, Türkiye'nin merkez bankası enflasyona karşı yürütülen mücadelede bazı iyileştirmeler yaptı. Merkez Bankası, politika araçlarını daha sade ve etkin bir hale getirerek uyguladığı yöntemleri güncelledi. Yapılan bu değişiklikler, enflasyonla mücadele mekanizmasının daha sistematik bir yolla yönetilmesine olanak tanıyor. Bu sadeleştirme süreci, piyasalarda fiyat istikrarını sağlamaya odaklanıldığı yönünde yorumlanıyor.", "excerpt": "The Economist'a göre, Türkiye'nin merkez bankası enflasyona karşı yürütülen mücadelede bazı iyileştirmeler yaptı. Merkez Bankası, politika araçlarını daha sade ve etkin bir hale getirerek uyguladığı yöntemleri güncelledi. Yapılan bu değişiklikler, enflasyonla mücadele mekanizmasının daha sistematik bir yolla yönetilmesine olanak tanıyor. Bu sadeleştirme süreci, piyasalarda fiyat istikrarını sağlamaya odaklanıldığı yönünde yorumlanıyor.", "is_truncated": false, "source_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPZGR4S256NEltckRURW1BcDYxVU55Q2IxeGpWaW55a1FXd0N4VGFUVU9Nd1BpclFjU0h2anUtUW9MYlZiTHlSeWxROEtCcTBIU1QxNXA5Mmd0c0tkbG8xOWdjbmRTdl9vbVktdWNmRmFQTzJ3c2ppaHhpcjVHdE9jTDRTVmUzYlMxRFVwS1J1X0F3aG9hRzR1MWtENGNWT2ZLUXF2eFVkdGJwR3VXYlc4SGxpNVBFQ21uREJucTc0TnY?oc=5", "source_name": "Google News", "image_url": "", "published_at": "07.06.2026"}, {"id": 3, "title_tr": "Şimşek: Enflasyon Yıl Sonu Ortası İkizi Seviyesinde Bitecek", "summary_tr": "Hazine ve Maliye Bakanı Mehmet Şimşek, büyük şokların yaşanacağı bir yılda bile enflasyonun düşmeye devam etmesi ve yıl sonunda ortası ikizi seviyesinde kapanması beklenmesine dair konuştu. Şimşek, bu bağlamda, \"deflasyon programına olan bağlılığımız sağlamdır\" dedi. Nomura Investment Forum Asia 2026'da yatırımcılara konuşan Bakan Şimşek, \"Şoklara açık bir dünyada ve zorlu bir komşulukta yaşıyoruz. Şoklar programın ilerleme hızını yavaşlatabilir, ancak seyrini değiştirmesi pek olası değil\" ifadelerini kullandı. Ayrıca Türkiye'nin yıllık enflasyon oranının Nisan ayında yüzde 30,87'ten yüzde 32,37'ye çıktığını belirtirken, bütçe açığının 23 yıllık ortalamasının yüzde 2,6 olduğunu hatırlattı. Şimşek, \"Harcama kısıtlamaları, gayriresmiliğe karşı mücadele, daha güçlü vergi uyumu ve denetim ile gelir toplama alanlarındaki iyileştirmeler sayesinde açığı 2023'teki yüzde 5,1'den 2025'te yüzde 2,9'a düşürdük\" diyerek, orta vadede açığın GSYİH'nın yüzde 3 altında tutulması hedefine kilit kaldıklarını ekledi.", "excerpt": "Hazine ve Maliye Bakanı Mehmet Şimşek, büyük şokların yaşanacağı bir yılda bile enflasyonun düşmeye devam etmesi ve yıl sonunda ortası ikizi seviyesinde kapanması beklenmesine dair konuştu. Şimşek, bu bağlamda, \"deflasyon programına olan bağlılığımız sağlamdır\" dedi. Nomura Investment Forum Asia 2026'da yatırımcılara konuşan Bakan Şimşek, \"Şoklara açık bir dünyada ve zorlu bir komşulukta yaşıyoruz. Şoklar programın ilerleme hızını yavaşlatabilir, ancak seyrini değiştirmesi pek olası değil\" ifadelerini kullandı. Ayrıca Türkiye'nin yıllık enflasyon oranının Nisan ayında yüzde 30,87'ten yüzde 32,37'ye çıktığını belirtirken, bütçe açığının 23 yıllık ortalamasının yüzde 2,6 olduğunu hatırlattı.", "is_truncated": true, "source_url": "https://www.hurriyetdailynews.com/inflation-expected-to-end-year-in-mid-twenties-simsek-222890", "source_name": "Hurriyet Daily News", "image_url": "https://image.hurimg.com/i/hurriyet/75/200x200/6a2144c7ba1efe630db570a2.jpg", "published_at": "07.06.2026"}, {"id": 4, "title_tr": "Trump'ın Baskısına Rağmen, Yüksek Yakıt Fiyatları Fed'i Faiz İndirimi Yapmaktan Men Edebilir", "summary_tr": "Rapor, ABD Merkez Bankası'nın (Fed) faiz indirimleri konusunda zorlanabileceğini belirtiyor. Bu zorluğun ana nedenlerinden biri, yüksek yakıt fiyatlarının piyasadaki etkisidir. Habere göre, bu fiyat baskısı, Fed'in faiz politikalarında beklenen gevşemeyi yapmasını engelleyebilir. Ayrıca, Donald Trump'ın politik baskılarının da Fed'in faiz kararları üzerindeki etkisinin bir faktör olduğu görülüyor. Bu durum, finans çevrelerinde faiz oranları konusunda belirsiz bir ortam yaratıyor.", "excerpt": "Rapor, ABD Merkez Bankası'nın (Fed) faiz indirimleri konusunda zorlanabileceğini belirtiyor. Bu zorluğun ana nedenlerinden biri, yüksek yakıt fiyatlarının piyasadaki etkisidir. Habere göre, bu fiyat baskısı, Fed'in faiz politikalarında beklenen gevşemeyi yapmasını engelleyebilir. Ayrıca, Donald Trump'ın politik baskılarının da Fed'in faiz kararları üzerindeki etkisinin bir faktör olduğu görülüyor. Bu durum, finans çevrelerinde faiz oranları konusunda belirsiz bir ortam yaratıyor.", "is_truncated": false, "source_url": "https://www.npr.org/2026/05/29/nx-s1-5837526/despite-trumps-pressure-high-gas-prices-may-keep-fed-from-cutting-interest-rates", "source_name": "NPR Topics: Economy", "image_url": "", "published_at": "07.06.2026"}, {"id": 5, "title_tr": "Küresel İslami Ekonomi Zirvesi İstanbul'da Başladı", "summary_tr": "Üçüncü Küresel İslami Ekonomi Zirvesi, küresel politika yapıcılar, merkez bankası yöneticileri, yatırımcılar, finans kurumları, akademisyenler ve sektör temsilcilerini bir araya getirerek İstanbul'da başladı. 3-6 Haziran tarihleri arasında Halkbank merkezinde İstanbul Finans Merkezi'nde düzenlenecek olan dört günlük zirve, AlBaraka İslami Ekonomi Forumu tarafından organize ediliyor. Bu yılki etkinlik, 'İslami Ekonomide Sermaye: Sürdürülebilir Kalkınma İçin Zenginlik Yapılandırma' teması altında toplanıyor. Zirvede yapay zeka, dijital dönüşüm, dijital sermaye, finansal inovasyon ve İslami fintech gibi konularda oturumlar düzenlenecek. Ayrıca, Türkiye Cumhuriyet Merkez Bankası Başkanı Fatih Karahan, Bank Negara Malaysia Başkanı Abdul Rasheed Ghaffour ve Filistin Para Otoritesi Başkanı Yahya Jawdat Hafez Şunnar’ın katılımıyla merkez bankası yöneticileri ve bakanları özel bir panel gerçekleştirilecek. Türkiye Hazine ve Maliye Bakanı Mehmet Şimşek de sermaye, kalkınma ve kapsayıcı refah üzerine konuşma yapacak. Zirve kapsamında akademi, finans ve sanayi arasındaki işbirliğini güçlendirecek birden fazla mutabakat ziyafet töreni planlanmıştır.", "excerpt": "Üçüncü Küresel İslami Ekonomi Zirvesi, küresel politika yapıcılar, merkez bankası yöneticileri, yatırımcılar, finans kurumları, akademisyenler ve sektör temsilcilerini bir araya getirerek İstanbul'da başladı. 3-6 Haziran tarihleri arasında Halkbank merkezinde İstanbul Finans Merkezi'nde düzenlenecek olan dört günlük zirve, AlBaraka İslami Ekonomi Forumu tarafından organize ediliyor. Bu yılki etkinlik, 'İslami Ekonomide Sermaye: Sürdürülebilir Kalkınma İçin Zenginlik Yapılandırma' teması altında toplanıyor. Zirvede yapay zeka, dijital dönüşüm, dijital sermaye, finansal inovasyon ve İslami fintech gibi konularda oturumlar düzenlenecek. Ayrıca, Türkiye Cumhuriyet Merkez Bankası Başkanı Fatih Karahan, Bank Negara Malaysia Başkanı Abdul Rasheed Ghaffour ve Filistin Para Otoritesi Başkanı Yahya Jawdat Hafez Şunnar’ın katılımıyla merkez bankası yöneticileri ve bakanları özel bir panel gerçekleştirilecek.", "is_truncated": true, "source_url": "https://www.hurriyetdailynews.com/global-islamic-economy-summit-kicks-off-in-istanbul-222780", "source_name": "Hurriyet Daily News", "image_url": "https://image.hurimg.com/i/hurriyet/75/200x200/6a1e9695cd2f8ff319452367.jpg", "published_at": "07.06.2026"}, {"id": 6, "title_tr": "Merkez Bankası 2026 enflasyon tahminini %26'ya çıkardı", "summary_tr": "Türkiye Cumhuriyet Merkez Bankası, bölgedeki savaşın etkilerini, artan enerji fiyatlarını ve küresel görünümdeki belirsizliği gerekçe göstererek 2026 yılı yıl sonu enflasyon tahminini %26'ya yükseltti. Bankanın yılın ikinci enflasyon raporunda konuşan Genel Müdür Fatih Karahan, son jeopolitik şokun deflasyon sürecini yavaşlattığını, ancak bunun bankanın fiyat istikrarına yönelik taahhüdünü değiştirmeyeceğini belirtti. Karahan, savaş ve yarattığı belirsizliğin deflasyon sürecini olumsuz etkilediğini ancak fiyat istikrarına ulaşma kararlılıklarının değişmeyeceğini kaydetti. Merkez Bankası, 2027 sonunda enflasyonun %15'e, 2028 sonunda %9'a düşerek orta vadeli %5 hedefine sabitlenmesini bekliyor. Karahan, jeopolitik şok sonrası varsayımlardaki olağanüstü güncellemeler nedeniyle ara hedefleri de 2026 için %24, 2027 için %15 ve 2028 için %9 olarak artırdı. Ayrıca banka, yüksek belirsizlik ortamında tahmin aralıkları kullanmayı durduracağını, yerine ise temel senaryo altındaki nokta tahminlerini ana risklerle birlikte paylaşacağını duyurdu.", "excerpt": "Türkiye Cumhuriyet Merkez Bankası, bölgedeki savaşın etkilerini, artan enerji fiyatlarını ve küresel görünümdeki belirsizliği gerekçe göstererek 2026 yılı yıl sonu enflasyon tahminini %26'ya yükseltti. Bankanın yılın ikinci enflasyon raporunda konuşan Genel Müdür Fatih Karahan, son jeopolitik şokun deflasyon sürecini yavaşlattığını, ancak bunun bankanın fiyat istikrarına yönelik taahhüdünü değiştirmeyeceğini belirtti. Karahan, savaş ve yarattığı belirsizliğin deflasyon sürecini olumsuz etkilediğini ancak fiyat istikrarına ulaşma kararlılıklarının değişmeyeceğini kaydetti. Merkez Bankası, 2027 sonunda enflasyonun %15'e, 2028 sonunda %9'a düşerek orta vadeli %5 hedefine sabitlenmesini bekliyor. Karahan, jeopolitik şok sonrası varsayımlardaki olağanüstü güncellemeler nedeniyle ara hedefleri de 2026 için %24, 2027 için %15 ve 2028 için %9 olarak artırdı.", "is_truncated": true, "source_url": "https://www.hurriyetdailynews.com/central-bank-lifts-2026-inflation-forecast-to-26-percent-222128", "source_name": "Hurriyet Daily News", "image_url": "https://image.hurimg.com/i/hurriyet/75/200x200/6a0588d9e02130392c72bf89.jpg", "published_at": "07.06.2026"}, {"id": 7, "title_tr": "Yatırımcılar ABD-İran görüşmelerine odaklanınca hisse senetleri yükseldi, tahvil getirileri düştü", "summary_tr": "Hisse senedi endeksleri ve Hazine getirileri Cuma günü yükseldi ve düştü; yatırımcılar, ABD ile İran arasındaki çatışmayı sona erdirecek yakın bir anlaşmanın olasılığını değerlendiriyor. Petrol fiyatları yükseldi ancak İran görüşmeleri etrafındaki belirsizlik hala bir endişe kaynağı olarak duruyor. ABD Dışişleri Bakanı Marco Rubio, Amerika Birleşik Devletleri'nin İran ile bir anlaşmaya doğru ilerleme kaydettiğini, ancak daha fazla çalışmanın gerektiğini belirtti. Wall Street'te Dow endeksi rekor kapanış yaparken, S&P 500 endeksi üst üste sekizinci hafta artış kaydetti. Bu yükselişler, savaşın ekonomik sonuçlarına dair endişeler devam etse de, yapay zeka (AI) ile ilgili hisselere olan artan taleple desteklendi. Buna karşılık, gösterge kabul edilen ABD 10 yıllık tahvil getirisi, Perşembe akşamı %4.584'ten %4.558'e, 2.6 baz puan geriledi.", "excerpt": "Hisse senedi endeksleri ve Hazine getirileri Cuma günü yükseldi ve düştü; yatırımcılar, ABD ile İran arasındaki çatışmayı sona erdirecek yakın bir anlaşmanın olasılığını değerlendiriyor. Petrol fiyatları yükseldi ancak İran görüşmeleri etrafındaki belirsizlik hala bir endişe kaynağı olarak duruyor. ABD Dışişleri Bakanı Marco Rubio, Amerika Birleşik Devletleri'nin İran ile bir anlaşmaya doğru ilerleme kaydettiğini, ancak daha fazla çalışmanın gerektiğini belirtti. Wall Street'te Dow endeksi rekor kapanış yaparken, S&P 500 endeksi üst üste sekizinci hafta artış kaydetti. Bu yükselişler, savaşın ekonomik sonuçlarına dair endişeler devam etse de, yapay zeka (AI) ile ilgili hisselere olan artan taleple desteklendi.", "is_truncated": true, "source_url": "https://finance.yahoo.com/markets/stocks/articles/stocks-rise-dollar-six-week-014105963.html", "source_name": "Yahoo Entertainment", "image_url": "https://s.yimg.com/os/en/reuters.com/bf8999785ca87868b977a896426fa00f", "published_at": "07.06.2026"}, {"id": 8, "title_tr": "Ortadoğu Çatışması, Faiz İndirimi Beklentilerini Bozdu", "summary_tr": "Ortadoğu'da devam eden çatışma, Türkiye Cumhuriyet Merkez Bankası'nın (TCMB) faiz kararları etrafındaki beklentileri önemli ölçüde aksattı. Enerji ve ulaştırma maliyetlerindeki artışın küresel enflasyona etkisiyle, savaşın petrol, doğalgaz ve emtia fiyatları üzerinde artırıcı baskı yaratması sonucunda, hem yerel piyasa katılımcıları hem de büyük uluslararası bankalar faiz indirimi beklentilerini en az iki ay erteletti. TCMB, 28 Şubat'ta başlayan gerilim tırmanışının ardından artan emtia fiyatları karşısında ihtiyati tedbir alarak, Mart ayında bir haftalık repo açık artışlarını durdurmuş ve likidite araçları üzerinden para sıkılaştırmasına geçerek fonlamayı %40 seviyesindeki faiz koridorunun üst bandına çekmiştir. Banka, Mayıs 2026 Piyasa Katılımcıları Anketi'ne göre faiz indirim beklentilerini sonbahara ertelerken, piyasalar politik faizin 11 Haziran ve 23 Temmuz'daki Para Politikası Kurulu (PPK) toplantılarında sabit kalmasını bekliyor; ilk faiz indirimi ise Eylül ayında 100 baz puan olarak tahmin ediliyor.", "excerpt": "Ortadoğu'da devam eden çatışma, Türkiye Cumhuriyet Merkez Bankası'nın (TCMB) faiz kararları etrafındaki beklentileri önemli ölçüde aksattı. Enerji ve ulaştırma maliyetlerindeki artışın küresel enflasyona etkisiyle, savaşın petrol, doğalgaz ve emtia fiyatları üzerinde artırıcı baskı yaratması sonucunda, hem yerel piyasa katılımcıları hem de büyük uluslararası bankalar faiz indirimi beklentilerini en az iki ay erteletti. TCMB, 28 Şubat'ta başlayan gerilim tırmanışının ardından artan emtia fiyatları karşısında ihtiyati tedbir alarak, Mart ayında bir haftalık repo açık artışlarını durdurmuş ve likidite araçları üzerinden para sıkılaştırmasına geçerek fonlamayı %40 seviyesindeki faiz koridorunun üst bandına çekmiştir. Banka, Mayıs 2026 Piyasa Katılımcıları Anketi'ne göre faiz indirim beklentilerini sonbahara ertelerken, piyasalar politik faizin 11 Haziran ve 23 Temmuz'daki Para Politikası Kurulu (PPK) toplantılarında sabit kalmasını bekliyor; ilk faiz indirimi ise Eylül ayında 100 baz puan olarak tahmin ediliyor.", "is_truncated": false, "source_url": "https://www.hurriyetdailynews.com/middle-east-conflict-upends-interest-rate-cut-expectations-222224", "source_name": "Hurriyet Daily News", "image_url": "https://image.hurimg.com/i/hurriyet/75/200x200/6a0986d2e02130392c72c8d7.jpg", "published_at": "07.06.2026"}];
+        var ARTICLES = [{"id": 0, "title_tr": "Aylar Süren Savaşın Ardından İranlılar Hayal Kırıklığı ve Umutsuzluğa Kapılıyor - The New York Times", "summary_tr": "Aylar süren çatışmaların ve gerilimin ardından İran toplumunda derin bir hayal kırıklığı ve umutsuzluk dalgası yaşanıyor. Savaşın hem ekonomik hem de sosyal dokuya vurduğu ağır darbe, halkın siyasi ve ekonomik geleceği hakkındaki beklentilerini yerle bir etmiş durumda. Uzmanlar, bu ruh halinin sadece askeri yorgunluktan değil, aynı zamanda yıllardır süregelen yüksek enflasyon, yaşam maliyetlerindeki artış ve temel hizmetlere erişimdeki aksamalardan kaynaklandığını belirtiyor.\n\n\nEkonomik cephede yaşanan çöküş, toplumsal huzursuzluğun ana kaynağı olarak öne çıkıyor. İran'ın döviz kuru üzerindeki sürekli baskı, yerel para biriminin değerini hızla düşürerek sıradan vatandaşların alım gücünü ciddi ölçüde eritti. Market raflarındaki temel gıda maddelerinin fiyatları, son aylarda kayda değer bir artış gösterdi. Bu durum, özellikle orta ve alt gelir gruplarındaki aileler için geçim mücadelesini hayati bir seviyeye taşıdı. Ekonomistler, hükümetin uyguladığı kısıtlayıcı tedbirlerin, kısa vadede bazı istikrar sağlamış olsa da, uzun vadede özel sektör yatırımlarını ve iş gücünün dinamizmini körelttiğini vurguluyor.\n\n\nSiyasi alanda ise, savaşın yarattığı belirsizlik ortamı, hükümetin otoritesine olan güveni sarsıyor. Muhalefet kanatlarından gelen sesler, yönetimin halkın temel ihtiyaçlarına yeterince cevap veremediğini ve çatışma ortamının maliyetini yönetilemez bir seviyeye çıkardığını dile getiriyor. Genç kuşaklar arasında, ülkenin geleceği hakkındaki umutsuzluk giderek artıyor. Eğitim ve iş bulma konularındaki zorluklar, birçok genç bireyi ülkeyi terk etme düşüncesine itiyor. Bu göç eğilimi, sadece demografik bir kayıp olmanın ötesinde, ülkenin uzun vadeli insan sermayesi açısından ciddi bir tehdit oluşturuyor.\n\n\nUluslararası tepkiler de bu iç gerilimi artırıyor. Bölgesel güçler ve Batılı ülkeler, İran'ın ekonomik ve siyasi istikrarını korumak için farklı yaklaşımlar sergiliyor. Bazı aktörler, çatışmaların sona ermesinin ardından kapsamlı bir ekonomik reform paketi sunulması gerektiğini savunurken, diğerleri ise mevcut siyasi yapının temelden yeniden ele alınması gerektiğini iddia ediyor. Bu farklı uluslararası baskı noktaları, İran'ın iç politikalarını daha da karmaşık bir hale getiriyor.\n\n\nSonuç olarak, İran'daki ruh hali, sadece bir siyasi krizin ötesinde, derin bir varoluşsal yorgunluğu yansıtıyor. Halk, savaşın getirdiği fiziksel yıkımın yanı sıra, ekonomik belirsizlik ve geleceğe dair net bir vizyon eksikliğinin yarattığı manevi bir çöküş yaşıyor. Bu durum, ülkenin yakın gelecekteki istikrarını ve toplumsal yapısını yeniden şekillendirecek kritik bir eşiği işaret ediyor.", "excerpt": "Aylar süren çatışmaların ve gerilimin ardından İran toplumunda derin bir hayal kırıklığı ve umutsuzluk dalgası yaşanıyor. Savaşın hem ekonomik hem de sosyal dokuya vurduğu ağır darbe, halkın siyasi ve ekonomik geleceği hakkındaki beklentilerini yerle bir etmiş durumda. Uzmanlar, bu ruh halinin sadece askeri yorgunluktan değil, aynı zamanda yıllardır süregelen yüksek enflasyon, yaşam maliyetlerindeki artış ve temel hizmetlere erişimdeki aksamalardan kaynaklandığını belirtiyor.", "is_truncated": true, "source_url": "https://www.nytimes.com/2026/06/07/world/middleeast/iranians-despair-war-economy-inflation.html", "source_name": "Nytimes", "image_url": "", "published_at": "07.06.2026"}];
 
         function changeFontSize(delta) {
             var root = document.documentElement;
@@ -430,7 +308,11 @@
             html += '<span class="meta-date">' + escapeHtml(article.published_at) + '</span>';
             html += '</div>';
             html += '<h2>' + escapeHtml(article.title_tr) + '</h2>';
-            html += '<div class="modal-summary">' + escapeHtml(article.summary_tr).replace(/\n/g, '<br>') + '</div>';
+            var summaryHtml = escapeHtml(article.summary_tr)
+                .split(/\n\n+/)
+                .map(function(p) { return '<p>' + p.replace(/\n/g, '<br>') + '</p>'; })
+                .join('');
+            html += '<div class="modal-summary">' + summaryHtml + '</div>';
             html += '<a href="' + article.source_url + '" target="_blank" rel="noopener" class="modal-source">Orijinal kaynaktan oku &rarr;</a>';
             html += '</div>';
             document.getElementById('modal-content').innerHTML = html;
