@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkında - Para Politikası Haberleri</title>
+    <style>
+        :root {
+            --bg: #f4ecd8; --bg-card: #fcf6e6; --bg-card-hover: #ede0c2;
+            --text: #3a2f1d; --text-dim: #6b5a3f; --text-muted: #9c8c70;
+            --accent: #a0522d; --border: #d4c5a3;
+            --header-grad: linear-gradient(135deg,#faf0d8 0%,#f4ecd8 100%); --font-size: 17px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg); color: var(--text); font-size: var(--font-size);
+            line-height: 1.8; min-height: 100vh;
+        }
+        .header {
+            background: var(--header-grad); border-bottom: 1px solid var(--border); padding: 36px 0 28px;
+        }
+        .container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+        .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 6px; }
+        .header .subtitle { color: var(--text-dim); font-size: 16px; }
+        .top-nav {
+            display: flex; gap: 18px; align-items: center; flex-wrap: wrap;
+            margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border);
+        }
+        .top-nav a {
+            color: var(--text-dim); text-decoration: none; font-weight: 600; font-size: 15px;
+        }
+        .top-nav a:hover, .top-nav a.active { color: var(--accent); }
+        .social-links { margin-left: auto; display: flex; gap: 10px; }
+        .social-links a {
+            width: 34px; height: 34px; border-radius: 8px;
+            background: var(--bg-card); border: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-dim); transition: all 0.15s;
+        }
+        .social-links a:hover { color: var(--accent); border-color: var(--accent); }
+        .social-links svg { width: 18px; height: 18px; }
+        main { padding: 48px 0 80px; }
+        .about-content {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 14px; padding: 40px;
+        }
+        .about-content h1, .about-content h2, .about-content h3 {
+            color: var(--text); margin-top: 28px; margin-bottom: 14px; line-height: 1.3;
+        }
+        .about-content h1 { font-size: 28px; }
+        .about-content h2 { font-size: 22px; }
+        .about-content h3 { font-size: 18px; }
+        .about-content p { margin-bottom: 16px; color: var(--text-dim); }
+        .about-content a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+        .about-content a:hover { border-bottom-color: var(--accent); }
+        .about-content ul, .about-content ol { margin: 0 0 16px 24px; color: var(--text-dim); }
+        .about-content li { margin-bottom: 6px; }
+        .about-content blockquote {
+            border-left: 3px solid var(--accent); padding-left: 18px; margin: 20px 0;
+            color: var(--text-dim); font-style: italic;
+        }
+        .about-content code {
+            background: var(--bg); padding: 2px 8px; border-radius: 4px;
+            font-family: Consolas, monospace; font-size: 0.92em;
+        }
+        .about-content hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+        .contact-box {
+            margin-top: 28px; padding: 20px; background: var(--bg);
+            border-radius: 10px; border: 1px solid var(--border);
+        }
+        .contact-box h3 { margin-top: 0; }
+        .footer {
+            border-top: 1px solid var(--border); padding: 28px 0;
+            text-align: center; color: var(--text-muted); font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Para Politikası Haberleri</h1>
+            <p class="subtitle">Küresel para politikası ve faiz haberleri</p>
+            <div class="top-nav">
+                <a href="index.html">Haberler</a>
+                <a href="about.html" class="active">Hakkında</a>
+                
+                <div class="social-links">
+                    
+                    <a href="https://twitter.com/example" target="_blank" rel="noopener noreferrer" title="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                    
+                    <a href="https://instagram.com/example" target="_blank" rel="noopener noreferrer" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                    
+                    <a href="https://linkedin.com/in/example" target="_blank" rel="noopener noreferrer" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                    
+                    <a href="mailto:info@parapolitikasi.com" target="_blank" rel="noopener noreferrer" title="E-posta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24V3H0zm21.518 2L12 12.713 2.482 5h19.036zM2 19V7.183l10 8.104 10-8.104V19H2z"/></svg></a>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="about-content">
+            
+                <h1>Para Politikası Bülteni</h1>
+<p>Bu site, küresel <strong>para politikası</strong> ve merkez bankası kararları hakkında güncel haberleri Türkçe olarak derler.</p>
+<h2>Misyon</h2>
+<ul>
+<li>Önemli ekonomik gelişmeleri Türkçe okuyuculara ulaştırmak</li>
+<li>Kaynak göstererek <strong>doğru çeviri</strong> yapmak</li>
+<li>Otomatik içerik derleme ve yayınlama</li>
+</ul>
+<h2>Kaynaklar</h2>
+<p>Haberler <a href="https://news.google.com">Google News</a>, Reuters, Financial Times, Bloomberg gibi güvenilir uluslararası kaynaklardan toplanır.</p>
+            
+            
+            <div class="contact-box">
+                <h3>İletişim</h3>
+                <p>Bizimle iletişime geçmek için: <a href="mailto:info@parapolitikasi.com">info@parapolitikasi.com</a></p>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            © 2026 Para Politikası Bülteni &middot; 
+            Yenisey ile oluşturuldu
+        </div>
+    </footer>
+</body>
+</html>
