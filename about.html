@@ -130,5 +130,19 @@
             Yenisey ile oluşturuldu
         </div>
     </footer>
+    <script>
+        try {
+            var savedZoom = localStorage.getItem('yenisey-zoom');
+            if (savedZoom) {
+                var scale = parseFloat(savedZoom);
+                document.body.style.zoom = scale;
+                if (!('zoom' in document.body.style) || navigator.userAgent.includes('Firefox')) {
+                    document.body.style.transform = 'scale(' + scale + ')';
+                    document.body.style.transformOrigin = 'top center';
+                    document.body.style.width = (100 / scale) + '%';
+                }
+            }
+        } catch(e){}
+    </script>
 </body>
 </html>
